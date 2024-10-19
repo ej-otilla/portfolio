@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evan James Otilla</title>
+    <script src="https://kit.fontawesome.com/6085f1fa62.js" crossorigin="anonymous"></script>
+    <!-- Favicons ---------------------------------------------------------------------------->
+    <!-- Added a large number of favicons with varying sizes to adapt to a wide range of devices. -->
     <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
     <link rel="icon" type="image/png" href="/assets/favicon/favicon-16x16.png" sizes="16x16">
     <link rel="icon" type="image/png" href="/assets/favicon/favicon-32x32.png" sizes="32x32">
@@ -11,7 +15,32 @@
     <link rel="icon" type="image/png" href="/assets/favicon/android-chrome-192x192.png" sizes="192x192">
     <link rel="icon" type="image/png" href="/assets/favicon/android-chrome-512x512.png" sizes="512x512">
 </head>
+
 <body>
     
 </body>
+
+<footer id="footer">
+    <!-- Contact Form ------------------------------------------------------------------------>
+    <!-- Everything but heading and the 'Let's Chat' button will be visible at first, but when the user clicks on the button, it will reveal the hidden form. The <br> tags will also be removed once design is established in CSS. This is just to clearly establish what it will look like foundation-wise. -->
+    <div class="contact-form-container">
+        <h2 class="contact-form-heading">Have an idea for a project?</h2>
+        <div class="cta-button-container">
+            <button class="cta-button">Let's Chat</button>
+        </div>
+        <input type="text" id="name" name="name" placeholder="Name" maxlength="256" spellcheck="false" autocapitalize="none" required>
+        <input type="email" id="email" name="email" placeholder="Email" maxlength="256" spellcheck="false" autocapitalize="none" required>
+        <textarea type="help-box" id="help-box" placeholder="How can I help?" maxlength="2500" autocapitalize="none" required></textarea>
+    </div>
+    <input type="submit" data-wait="Please wait..." class="submit-button" value="Submit">
+    <br><br>
+    <!-- Social Media Icons ------------------------------------------------------------------>
+    <div class="social-icons">
+        <a href="https://www.linkedin.com/in/ej-otilla/" class="fa-brands fa-linkedin fa-2x" target="_blank"></a>
+        <a href="https://www.github.com/ej-otilla" class="fa-brands fa-github fa-2x" target="_blank"></a>
+    </div>
+    <br>
+    <!-- Copyright --------------------------------------------------------------------------->
+    <div class="copyright">&copy; 2024 Evan James Otilla. All Rights Reserved.</div>
+</footer>
 </html>
