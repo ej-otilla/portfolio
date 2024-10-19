@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evan James Otilla</title>
+    <title>Evan James Otilla | About</title>
     <script src="https://kit.fontawesome.com/6085f1fa62.js" crossorigin="anonymous"></script>
     <!-- Favicons ---------------------------------------------------------------------------->
-    <!-- Added a large number of favicons with varying sizes to adapt to a wide range of devices. -->
+    <!-- Added multiple favicons in different sizes for compatibility with various devices. -->
     <link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
     <link rel="icon" type="image/png" href="../assets/favicon/favicon-16x16.png" sizes="16x16">
     <link rel="icon" type="image/png" href="../assets/favicon/favicon-32x32.png" sizes="32x32">
@@ -17,41 +17,47 @@
 </head>
 
 <body>
+    <!-- Navigation Bar ----------------------------------------------------------------->
+    <!-- The logo will be left-aligned, the 'Projects' and 'About' links will be centered, and 'Start Your Project →' will be right-aligned with a distinct design to direct users to the footer's contact form instead of another page. -->
     <header>
         <div class="nav-logo">
-            <a href="../index.html"><img src="../assets/logo.png" loading="lazy" alt="Stylized logo with angular lines and curves in a sage green color, forming the letters 'E' and 'J' in a minimalist design."></a>
+            <a href="/"><img src="../assets/logo.png" loading="lazy" alt="Stylized logo with angular lines and curves in a sage green color, forming the letters 'E' and 'J' in a minimalist design."></a>
         </div>
-        <nav>
+        <nav aria-label="Navigation Menu">
             <ul>
-                <li><a href="../projects/">Projects</a></li>
-                <li><a href="../about/">About</a></li>
+                <li><a href="/projects/">Projects</a></li>
+                <li><a href="/about/">About</a></li>
                 <li><a href="#footer">Start Your Project →</a></li>
             </ul>
         </nav>
     </header>
+
+    <footer id="footer">
+        <!-- Contact Form ------------------------------------------------------------------------>
+        <!-- Initially, everything except the heading and the 'Let's Chat' button will be visible. When the user clicks the button, the hidden form will be revealed. -->
+        <div class="contact-form-wrapper">
+            <h2 class="contact-form-heading">Have an idea for a project?</h2>
+            <div class="cta-button-container">
+                <button class="cta-button" type="button">Let's Chat</button>
+            </div>
+            <form class="contact-form">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" maxlength="256" spellcheck="false" autocapitalize="none" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" maxlength="256" spellcheck="false" autocapitalize="none" required>
+                <label for="help-box">How can I help?</label>
+                <textarea id="help-box" name="help-box" maxlength="2500" autocapitalize="none" required></textarea>
+                <input type="submit" data-wait="Please wait..." class="submit-button" value="Submit">
+            </form>
+        </div>
+        <!-- Social Media Icons ------------------------------------------------------------------>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/ej-otilla/" class="fa-brands fa-linkedin fa-2x" aria-label="LinkedIn Profile" target="_blank"></a>
+            <a href="https://www.github.com/ej-otilla" class="fa-brands fa-github fa-2x" aria-label="GitHub Profile" target="_blank"></a>
+        </div>
+        <!-- Copyright --------------------------------------------------------------------------->
+        <div class="copyright">&copy; 2024 Evan James Otilla. All Rights Reserved.</div>
+    </footer>
 </body>
 
-<footer id="footer">
-    <!-- Contact Form ------------------------------------------------------------------------>
-    <!-- Everything but heading and the 'Let's Chat' button will be visible at first, but when the user clicks on the button, it will reveal the hidden form. The <br> tags will also be removed once design is established in CSS. This is just to clearly establish what it will look like foundation-wise. -->
-    <div class="contact-form-container">
-        <h2 class="contact-form-heading">Have an idea for a project?</h2>
-        <div class="cta-button-container">
-            <button class="cta-button">Let's Chat</button>
-        </div>
-        <input type="text" id="name" name="name" placeholder="Name" maxlength="256" spellcheck="false" autocapitalize="none" required>
-        <input type="email" id="email" name="email" placeholder="Email" maxlength="256" spellcheck="false" autocapitalize="none" required>
-        <textarea type="help-box" id="help-box" placeholder="How can I help?" maxlength="2500" autocapitalize="none" required></textarea>
-    </div>
-    <input type="submit" data-wait="Please wait..." class="submit-button" value="Submit">
-    <br><br>
-    <!-- Social Media Icons ------------------------------------------------------------------>
-    <div class="social-icons">
-        <a href="https://www.linkedin.com/in/ej-otilla/" class="fa-brands fa-linkedin fa-2x" target="_blank"></a>
-        <a href="https://www.github.com/ej-otilla" class="fa-brands fa-github fa-2x" target="_blank"></a>
-    </div>
-    <br>
-    <!-- Copyright --------------------------------------------------------------------------->
-    <div class="copyright">&copy; 2024 Evan James Otilla. All Rights Reserved.</div>
-</footer>
 </html>
