@@ -75,14 +75,19 @@
     <div class="contact-form-wrapper">
         <h2 class="contact-form-heading">Have an idea for a project?</h2>
         <div class="cta-button-container">
-            <button class="cta-button">Let's Chat</button>
+            <button class="cta-button" type="button">Let's Chat</button>
         </div>
-        <input type="text" id="name" name="name" placeholder="Name" maxlength="256" spellcheck="false" autocapitalize="none" required>
-        <input type="email" id="email" name="email" placeholder="Email" maxlength="256" spellcheck="false" autocapitalize="none" required>
-        <textarea type="help-box" id="help-box" placeholder="How can I help?" maxlength="2500" autocapitalize="none" required></textarea>
+<form class="contact-form">
+                <label for="name">Name</label>
+        <input type="text" id="name" name="name" maxlength="256" spellcheck="false" autocapitalize="none" required>
+<label for="email">Email</label>
+        <input type="email" id="email" name="email" maxlength="256" spellcheck="false" autocapitalize="none" required>
+        <label for="help-box">How can I help?</label>
+                <textarea id="help-box" name="help-box" maxlength="2500" autocapitalize="none" required></textarea>
+<input type="submit" data-wait="Please wait..." class="submit-button" value="Submit">
+            </form>
     </div>
-    <input type="submit" data-wait="Please wait..." class="submit-button" value="Submit">
-    <br><br>
+        <br>
     <!-- Social Media Icons ------------------------------------------------------------------>
     <div class="social-icons">
         <a href="https://www.linkedin.com/in/ej-otilla/" class="fa-brands fa-linkedin fa-2x" aria-label="LinkedIn Profile" target="_blank"></a>
