@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evan James Otilla</title>
     <script src="https://kit.fontawesome.com/6085f1fa62.js" crossorigin="anonymous"></script>
+<!-- Favicons ---------------------------------------------------------------------------->
+    <!-- Added a large number of favicons with varying sizes to adapt to a wide range of devices. -->
     <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
     <link rel="icon" type="image/png" href="/assets/favicon/favicon-16x16.png" sizes="16x16">
     <link rel="icon" type="image/png" href="/assets/favicon/favicon-32x32.png" sizes="32x32">
@@ -16,6 +18,8 @@
 
 <body>
     <div class="hero">
+<!-- Navigation Bar ----------------------------------------------------------------->
+        <!-- The logo will be aligned to the left. The navigation menu will have the 'Projects' and 'About' links centered, while 'Get In Touch' will be left-aligned to indicate that it leads to the footer's contact form rather than another page. -->
         <header>
             <div class="nav-logo">
                 <a href="index.html"><img src="./assets/logo.png" alt="A sage green logo resembling the initials 'EJ' with the J encased in the E."></a>
@@ -27,6 +31,8 @@
                 </ul>
             </nav>
         </header>
+<!-- Hero Title ---------------------------------------------------------------------->
+        <!-- This will be the page's main focus, designed to be large and eye-catching for users upon arrival. -->
         <div class="hero-ttl-container">
             <h1 class="hero-ttl">CREATIVE THINKER.</h1>
             <h1 class="hero-ttl">PROBLEM-SOLVER.</h1>
@@ -34,6 +40,8 @@
         </div>
     </div>
     <main>
+<!-- Featured Project ---------------------------------------------------------------->
+        <!-- The images will be aligned in a row, with the middle photo appearing more prominent, while the other two are slightly blurred and grayed out for emphasis. -->
         <section>
             <div class="featured-proj-container">
                 <h2 class="featured-proj-heading">Featured Project</h2>
@@ -44,6 +52,7 @@
                 </div>
             </div>
         </section>
+<!-- Blurb --------------------------------------------------------------------------->
         <section>
             <div class="blurb-container">
                 <h2 class="blurb-greeting">Nice To Meet You!</h2>
@@ -55,7 +64,9 @@
     </main>
 </body>
 
-<footer>
+<footer id="footer">
+    <!-- Contact Form ------------------------------------------------------------------------>
+    <!-- Everything but heading and the 'Let's Chat' button will be visible at first, but when the user clicks on the button, it will reveal the hidden form. The <br> tags will also be removed once design is established in CSS. This is just to clearly establish what it will look like foundation-wise. -->
     <div class="contact-form-container">
         <h2 class="contact-form-heading">Have an idea for a project?</h2>
         <button class="cta-button">Let's Chat</button>
@@ -64,10 +75,14 @@
         <textarea type="help-box" id="help-box" placeholder="How can I help?" maxlength="2500" required></textarea>
     </div>
     <input type="submit" data-wait="Please wait..." class="submit-button" value="submit">
+<br><br>
+    <!-- Social Media Icons ------------------------------------------------------------------>
     <div class="social-icons">
         <a href="https://www.linkedin.com/in/ej-otilla/" class="fa-brands fa-linkedin fa-2x" target="_blank"></a>
         <a href="https://www.github.com/ej-otilla" class="fa-brands fa-github fa-2x" target="_blank"></a>
     </div>
+<br>
+    <!-- Copyright --------------------------------------------------------------------------->
     <div class="copyright">&copy; 2024 Evan James Otilla. All Rights Reserved.</div>
 </footer>
 </html>
