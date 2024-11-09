@@ -125,24 +125,24 @@ nav {
 /* Navigation Bar Animations --------------------------------------- */
 
 .nav-link:hover {
-    opacity: 0.75;
+    color: rgba(255, 255, 255, 0.7)
 }
 
 .nav-link::before {
-    transition: 300ms;
-    height: 5px;
     content: "";
     position: absolute;
+    display: block;
+    width: 100%;
+    height: 0.3rem;
+    bottom: 1rem;
+    left: 0;
     background-color: #9caf89;
-}
-
-.nav-link::before {
-    width: 0%;
-    bottom: 10px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
 }
 
 .nav-link:hover::before {
-    width: 100%;
+    transform: scaleX(1);
 }
 
 .start-project-button {
@@ -152,7 +152,7 @@ nav {
     padding: 9px 25px;
     background-color: transparent;
     color: #fff;
-    border: 2px solid rgba(156, 175, 137, 0.8);
+    border: 0.3rem solid rgba(156, 175, 137, 0.8);
     border-radius: 4rem;
     font-family: Figtree, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-transform: uppercase;
