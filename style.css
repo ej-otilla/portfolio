@@ -1,0 +1,173 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+/* Body ------------------------------------------------------------ */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    margin: 0;
+    background-color: #211e21;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+header {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    vertical-align: baseline;
+    padding: 0 5rem;
+    padding-top: 5rem;
+    position: relative;
+}
+
+img {
+    pointer-events: none;
+}
+
+/* Hero ------------------------------------------------------------ */
+
+.hero {
+    height: 100vh;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.hero-ttl-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px);
+}
+
+.hero-ttl {
+    margin: 0;
+    font-family: Figtree, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 9rem;
+    line-height: 8rem;
+    flex: 0 0 auto;
+    color: #9caf89;
+    text-align: center;
+    justify-content: center;
+}
+
+/* Navigation Bar -------------------------------------------------- */
+
+.nav-logo {
+    flex: 0 0 auto;
+}
+
+.nav-logo img {
+    display: block;
+    width: 3em;
+    max-width: 100%;
+    height: auto;
+}
+
+.nav-logo a {
+    width: 0;
+    height: 0;
+}
+
+nav {
+    font-family: Figtree, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    position: relative;
+}
+
+.nav-links li {
+    padding: 0px 20px;
+}
+
+.nav-links li a {
+    transition: all 0.2s ease 0s;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-link {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #9caf89;
+    padding: 20px 0px;
+    margin: 0px 20px;
+    display: inline-block;
+    position: relative;
+}
+
+/* Navigation Bar Animations --------------------------------------- */
+
+.nav-link:hover {
+    opacity: 0.75;
+}
+
+.nav-link::before {
+    transition: 300ms;
+    height: 5px;
+    content: "";
+    position: absolute;
+    background-color: #9caf89;
+}
+
+.nav-link::before {
+    width: 0%;
+    bottom: 10px;
+}
+
+.nav-link:hover::before {
+    width: 100%;
+}
+
+.start-project-button {
+    display: inline-block;
+    text-align: center;
+    line-height: 3rem;
+    padding: 9px 25px;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid rgba(156, 175, 137, 0.8);
+    border-radius: 4rem;
+    font-family: Figtree, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    font-size: inherit;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.start-project-button:hover {
+    transition: all 0.2s ease 0s;
+    background-color: #9caf89;
+    color: #211e21;
+    cursor: pointer;
+}
+
+.start-project-button:not(:hover) {
+    transition: all 0.2s ease 0s;
+}
