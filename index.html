@@ -25,12 +25,11 @@
                 <a href="/"><img src="assets/logo.png" alt="Stylized logo with angular lines and curves in a sage green color, forming the letters 'E' and 'J' in a minimalist design."></a>
             </div>
             <nav aria-label="Navigation Menu">
-                <ul class="nav-links">
-                    <li><a href="projects/" class="nav-link">Projects</a></li>
+                <ul class="navbar">
                     <li><a href="about/" class="nav-link">About</a></li>
                 </ul>
             </nav>
-            <a href="#footer" class="start-project-btn cta-btn">Start Your Project →</a>
+            <a href="#footer" class="start-project-btn cta-btn">Work With Me →</a>
         </header>
         <!-- Hero Title -->
         <div class="hero-ttl-wrapper">
@@ -50,9 +49,6 @@
                     <img class="featured-proj-front" src="assets/featured-proj/portfolio-id-title.jpg" loading="lazy" alt="Title page with a green stylized 'EJ' logo with descriptive text and relevant identification details below.">
                     <img class="featured-proj-bg" src="assets/featured-proj/portfolio-id-colour-variations.jpg" loading="lazy" alt="Stylized 'EJ' logo in green on two card-like shapes with alternating dark gray and light green backgrounds, accompanied by four smaller cards below showcasing the logo on varying opacities of black.">
                 </div>
-                <div class="featured-proj-c-more">
-                    <a href="projects/" class="cta-button">Show All Projects</a>
-                </div>
             </div>
         </section>
         <!-- Blurb -->
@@ -68,14 +64,11 @@
         </section>
     </main>
     
-    <footer id="footer">
+    <footer id="footer" class="footer-wrapper">
         <!-- Contact Form -->
         <!-- Initially, everything except the heading and the 'Let's Chat' button will be visible. When the user clicks the button, the hidden form will be revealed. -->
         <div class="contact-form-wrapper">
             <h2 class="contact-form-heading">Have an idea for a project?</h2>
-            <div class="cta-button-container">
-                <button class="cta-button" type="button">Let's Chat</button>
-            </div>
             <form class="contact-form">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" maxlength="256" spellcheck="false" autocapitalize="none" required>
@@ -86,13 +79,15 @@
                 <input type="submit" data-wait="Please wait..." class="submit-button" value="Submit">
             </form>
         </div>
-        <!-- Social Media Icons -->
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/ej-otilla/" class="fa-brands fa-linkedin fa-2x" aria-label="LinkedIn Profile" target="_blank"></a>
-            <a href="https://www.github.com/ej-otilla" class="fa-brands fa-github fa-2x" aria-label="GitHub Profile" target="_blank"></a>
+        <div class="socials-n-copyright-wrapper">
+            <!-- Social Media Icons -->
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/ej-otilla/" class="fa-brands fa-linkedin fa-2x" aria-label="LinkedIn Profile" target="_blank"></a>
+                <a href="https://www.github.com/ej-otilla" class="fa-brands fa-github fa-2x" aria-label="GitHub Profile" target="_blank"></a>
+            </div>
+            <!-- Copyright -->
+            <p class="copyright"><small>&copy; 2024 Evan James Otilla. All Rights Reserved.</small></p>
         </div>
-        <!-- Copyright -->
-        <p><small>&copy; 2024 Evan James Otilla. All Rights Reserved.</small></p>
     </footer>
 </body>
 

@@ -2,14 +2,14 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    list-style: none;
+    text-decoration: none;
 }
 
 :root {
     font-size: 62.5%;
     scroll-behavior: smooth;
 }
-
-/* Body ------------------------------------------------------------ */
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -57,7 +57,7 @@ img {
     margin: 0;
     font-family: Figtree, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 6vw;
-    line-height: 5vw;
+    line-height: 4.5vw;
     flex: 0 0 auto;
     color: #9caf89;
     text-align: center;
@@ -72,7 +72,7 @@ img {
 
 .nav-logo img {
     display: block;
-    width: 4.5vw;
+    width: 3vw;
     max-width: 100%;
     height: auto;
 }
@@ -94,28 +94,25 @@ nav {
     transform: translateX(-50%);
 }
 
-.nav-links {
-    list-style: none;
+.navbar {
     display: flex;
     justify-content: center;
     flex-grow: 1;
     position: relative;
 }
 
-.nav-links li {
+.navbar li {
     padding: 0px 20px;
 }
 
-.nav-links li a {
+.navbar li a {
     transition: all 0.2s ease 0s;
     border-radius: 5px;
     color: #fff;
-    text-decoration: none;
 }
 
 .nav-link {
     text-transform: uppercase;
-    text-decoration: none;
     padding: 20px 0px;
     margin: 0px 20px;
     display: inline-block;
@@ -135,7 +132,6 @@ nav {
     text-transform: uppercase;
     font-size: inherit;
     white-space: nowrap;
-    text-decoration: none;
     font-weight: 600;
 }
 
@@ -171,4 +167,55 @@ nav {
 
 .cta-btn:not(:hover) {
     transition: all 0.2s ease 0s;
+}
+
+/* Featured Project ------------------------------------------------ */
+
+.featured-proj-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.featured-proj-heading {
+    font-size: 3vw;
+    font-weight: 750;
+    margin-bottom: 5rem;
+    color: #fff;
+}
+
+.featured-proj {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 80%;
+    max-height: 100%;
+    margin: 0 auto;
+    flex-direction: row;
+    position: relative;
+}
+
+.featured-proj img {
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-proj-bg {
+    max-width: 25%;
+    filter: blur(0.3rem);
+    opacity: 0.50;
+    z-index: 0;
+    position: relative;
+}
+
+.featured-proj-front {
+    max-width: 30%;
+    z-index: 2;
+    box-shadow: 0 0px 10px 1px #9caf89;
+    transform: scale(1.05);
 }
