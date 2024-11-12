@@ -38,6 +38,8 @@ img {
     pointer-events: none;
 }
 
+/* HOMEPAGE ------------------------------------------------------------------------------- */
+
 /* Hero ------------------------------------------------------------ */
 
 .hero {
@@ -123,7 +125,7 @@ nav {
 .cta-btn {
     display: inline-block;
     text-align: center;
-    line-height: 3.3vh;
+    line-height: 2rem;
     padding: 1rem 3rem;
     background-color: transparent;
     color: #fff;
@@ -141,6 +143,23 @@ nav {
 
 .nav-link:hover {
     color: rgba(255, 255, 255, 0.7)
+}
+
+.nav-link.active::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 0.3rem;
+    bottom: 1rem;
+    left: 0;
+    background-color: #9caf89;
+    transform: scaleX(1);
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover:not(.active)::before {
+    transform: scaleX(1);
 }
 
 .nav-link::before {
@@ -173,27 +192,6 @@ nav {
 
 /* Featured Project ------------------------------------------------ */
 
-.featured-proj-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-}
-
-.featured-proj-heading {
-    font-family: var(--titlefont);
-    font-size: 6rem;
-    font-weight: 750;
-    margin-bottom: 5rem;
-    padding: 2rem 0;
-    color: #fff;
-    background-color: #9caf89;
-    width: 100%;
-    text-wrap: nowrap;
-}
-
 .featured-proj {
     display: flex;
     justify-content: center;
@@ -201,7 +199,7 @@ nav {
     gap: 1.5rem;
     max-width: 80%;
     max-height: 100%;
-    margin: 0 auto;
+    margin: 5rem;
     flex-direction: row;
     position: relative;
 }
@@ -229,7 +227,7 @@ nav {
 
 /* Blurb ----------------------------------------------------------- */
 
-.blurb-wrapper {
+.featured-proj-wrapper, .blurb-wrapper, .proficiencies-wrapper, .virtues-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -240,11 +238,11 @@ nav {
     text-transform: none;
 }
 
-.blurb-heading {
+.featured-proj-heading, .blurb-heading, .proficiencies-ttl, .virtues-ttl {
     font-family: var(--titlefont);
     font-size: 6rem;
     font-weight: 750;
-    color: #fff;
+    color: #211e21;
     text-transform: uppercase;
     background-color: #9caf89;
     padding: 2rem 0;
@@ -274,7 +272,7 @@ nav {
 
 .blurb-desc {
     font-size: 3rem;
-    line-height: 3rem; 
+    line-height: 2rem; 
     color: #fff;
     text-align: left;
     padding-left: 10rem;
@@ -286,7 +284,53 @@ nav {
     font-weight: 600;
 }
 
-/* Footer ---------------------------------------------------------- */
+/* ABOUT PAGE ----------------------------------------------------------------------------- */
+
+/* About Me -------------------------------------------------------- */
+
+.abtme-ttl {
+    font-family: var(--titlefont);
+    font-size: 5rem;
+    color: #9caf89;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.abtme-subttl {
+    font-size: 2rem;
+    color: #9caf89;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.abtme-desc-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    gap: 1rem;
+}
+
+.professional-portrait {
+    border-radius: 250px 250px 0 0;
+    margin: 5rem;
+    width: 50rem;
+    height: 50rem;
+    object-fit: cover;
+}
+
+.abtme-desc {
+    font-family: var(--bodyfont);
+    font-size: 1.6rem;
+    line-height: 2rem;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    text-transform: none;
+}
+
+/* General Footer Styles ------------------------------------------- */
 
 #footer {
     font-family: var(--titlefont);
@@ -312,7 +356,7 @@ label, textarea {
     background-color: rgba(156, 175, 137, 0.9);
     border-radius: 25px;
     padding: 3rem 3rem;
-    max-width: 1000px;
+    max-width: 800px;
     width: 100%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: auto;
@@ -320,7 +364,7 @@ label, textarea {
 }
 
 .contact-form-heading {
-    font-size: 6rem;
+    font-size: 4.8rem;
     color: #211e21;
     text-align: center;
     font-weight: 750;
@@ -329,7 +373,7 @@ label, textarea {
 
 .contact-form-subheading {
     font-family: var(--bodyfont);
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: #211e21;
     text-align: center;
     font-weight: 500;
@@ -338,6 +382,7 @@ label, textarea {
 }
 
 .contact-form label {
+    text-align: left;
     font-size: 1.5rem;
     font-weight: 500;
     color: #211e21;

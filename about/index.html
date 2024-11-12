@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evan James Otilla | About</title>
     <script src="https://kit.fontawesome.com/6085f1fa62.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap">
     <!-- Favicons -->
-    <!-- Added multiple favicons in different sizes for compatibility with various devices. -->
     <link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
     <link rel="icon" type="image/png" href="../assets/favicon/favicon-16x16.png" sizes="16x16">
     <link rel="icon" type="image/png" href="../assets/favicon/favicon-32x32.png" sizes="32x32">
@@ -18,18 +19,17 @@
 
 <body>
     <!-- Navigation Bar -->
-    <!-- The logo will be left-aligned, the 'Projects' and 'About' links will be centered, and 'Start Your Project →' will be right-aligned with a distinct design to direct users to the footer's contact form instead of another page. -->
     <header>
         <div class="nav-logo">
-            <a href="/"><img src="../assets/logo.png" alt="Stylized logo with angular lines and curves in a sage green color, forming the letters 'E' and 'J' in a minimalist design."></a>
+            <a href="portfolio/"><img src="../assets/logo.png" alt="Stylized logo with angular lines and curves in a sage green color, forming the letters 'E' and 'J' in a minimalist design."></a>
         </div>
         <nav aria-label="Navigation Menu">
-            <ul>
-                <li><a href="/projects/">Projects</a></li>
-                <li><a href="/about/">About</a></li>
-                <li><a href="#footer">Start Your Project →</a></li>
+            <ul class="navbar">
+                <li><a href="portfolio/" class="nav-link">Home</a></li>
+                <li><a href="about/" class="nav-link active">About</a></li>
             </ul>
         </nav>
+        <a href="#footer" class="cta-btn">Work With Me →</a>
     </header>
     <main>
         <!-- About Me -->
@@ -37,99 +37,83 @@
             <div class="abtme-desc-wrapper">
                 <h1 class="abtme-ttl">Hi, I'm Evan James Otilla.</h1>
                 <h2 class="abtme-subttl">You can call me Evan or EJ for short!</h2>
-                <img class="professional-portrait" src="../assets/blurb/professional-portrait.jpg" alt="Professional portrait of Evan James Otilla wearing a white button-down shirt, black tie, and coat, smiling warmly while looking to the right." width="300"> <!-- Removing the width attribute when CSS is incorporated. -->
+                <img class="professional-portrait" src="../assets/blurb/professional-portrait.jpg" alt="Professional portrait of Evan James Otilla wearing a white button-down shirt, black tie, and coat, smiling warmly while looking to the right.">
                 <p class="abtme-desc">Originally from the Philippines, I've always been fascinated with technology and exploring the depths of my creativity.</p>
                 <p class="abtme-desc">Currently, I'm learning web design and development at the Southern Institute of Technology (SAIT), focusing on HTML and CSS. I'm particularly interested in user experience, visual design, and ensuring that everything I create is accessible to everyone, regardless of ability.</p>
                 <p class="abtme-desc">When I'm not working, I enjoy exercising, reading books, learning music production, and watching commentary and gaming videos on YouTube.</p>
             </div>
         </section>
         <!-- Proficiencies -->
-        <!-- Each language and program will have a skill progress bar on its right. Removing the width attribute for each image when CSS is incorporated. -->
         <section>
-            <h2>Proficiencies</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Front-End Languages</th>
-                        <th></th> <!-- Empty column header to balance the layout -->
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="html-wrapper">
-                        <th scope="row"><img src="../assets/front-end-stack/html5-logo.svg" loading="lazy" alt="Orange HTML5 logo" aria-label="Orange HTML5 logo" width="75"></th>
-                        <td class="skill-bar">
-                        <div class="html">65%</div>
-                        </td>
-                    </tr>
-                    <tr class="css-wrapper">
-                        <th scope="row"><img src="../assets/front-end-stack/css3-logo.svg" loading="lazy" alt="Blue CSS3 logo" aria-label="Blue CSS3 logo" width="75"></th>
-                        <td class="skill-bar">
-                            <div class="css">55%</div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Adobe Creative Cloud</th>
-                        <th></th> <!-- Empty column header to balance the layout -->
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="ps-wrapper">
-                        <th scope="row"><img src="../assets/adobe-cc/ps-logo.svg" loading="lazy" alt="Blue Adobe Photoshop logo" aria-label="Blue Adobe Photoshop logo" width="75"></th>
-                        <td class="skill-bar">
-                        <div class="ps">85%</div>
-                        </td>
-                    </tr>
-                    <tr class="ai-wrapper">
-                        <th scope="row"><img src="../assets/adobe-cc/ai-logo.svg" loading="lazy" alt="Orange Adobe Illustrator logo" aria-label="Orange Adobe Illustrator logo" width="75"></th>
-                        <td class="skill-bar">
-                            <div class="ai">50%</div>
-                        </td>
-                    </tr>
-                    <tr class="pr-wrapper">
-                        <th scope="row"><img src="../assets/adobe-cc/pr-logo.svg" loading="lazy" alt="Purple Adobe Premiere Pro logo" aria-label="Purple Adobe Premiere Pro logo" width="75"></th>
-                        <td class="skill-bar">
-                            <div class="pr">45%</div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="proficiencies-wrapper">
+                <h2 class="proficiencies-ttl">Proficiencies</h2>
+                <table class="proficiencies-content">
+                    <tbody>
+                        <tr class="html-wrapper">
+                            <th scope="row"><img src="../assets/front-end-stack/html5-logo.svg" loading="lazy" alt="Orange HTML5 logo" aria-label="Orange HTML5 logo"></th>
+                            <td class="skill-bar">
+                            <div class="html percentage">65%</div>
+                            </td>
+                        </tr>
+                        <tr class="css-wrapper">
+                            <th scope="row"><img src="../assets/front-end-stack/css3-logo.svg" loading="lazy" alt="Blue CSS3 logo" aria-label="Blue CSS3 logo" width="75"></th>
+                            <td class="skill-bar">
+                                <div class="css percentage">55%</div>
+                            </td>
+                        </tr>
+                        <tr class="ps-wrapper">
+                            <th scope="row"><img src="../assets/adobe-cc/ps-logo.svg" loading="lazy" alt="Blue Adobe Photoshop logo" aria-label="Blue Adobe Photoshop logo" width="75"></th>
+                            <td class="skill-bar">
+                            <div class="ps percentage">85%</div>
+                            </td>
+                        </tr>
+                        <tr class="ai-wrapper">
+                            <th scope="row"><img src="../assets/adobe-cc/ai-logo.svg" loading="lazy" alt="Orange Adobe Illustrator logo" aria-label="Orange Adobe Illustrator logo" width="75"></th>
+                            <td class="skill-bar">
+                                <div class="ai percentage">50%</div>
+                            </td>
+                        </tr>
+                        <tr class="pr-wrapper">
+                            <th scope="row"><img src="../assets/adobe-cc/pr-logo.svg" loading="lazy" alt="Purple Adobe Premiere Pro logo" aria-label="Purple Adobe Premiere Pro logo" width="75"></th>
+                            <td class="skill-bar">
+                                <div class="pr percentage">45%</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
         <!-- My Virtues -->
         <section>
-            <h2 class="virtues-ttl">My Virtues</h2>
-            <ol>
-                <li class="virtues">
-                    User-Centric
-                    <p class="virtues-desc">I focus on putting people at the heart of my designs. This approach guarantees that my work is intuitive, exciting, and, most importantly, accessible.</p>
-                </li>
-                <li class="virtues">
-                    Sustainable
-                    <p class="virtues-desc">I place sustainability on quite a high pedestal. I make sure to have a positive impact on the environment by reducing waste and energy consumption, as well as using eco-friendly materials and creating long-lasting designs. <strong>Keeping our planet healthy is more important than ever, so I encourage you to make smart decisions.</strong></p>
-                </li>
-                <li class="virtues">
-                    Story-Driven
-                    <p class="virtues-desc">Every element in my designs is intentional and serves a meaningful purpose. I weave stories into my work to create a stronger connection and a more pleasing experience for users and clients.</p>
-                </li>
-                <li class="virtues">
-                    Dynamic
-                    <p class="virtues-desc">My creations are always evolving, just like the rest of the world. I put a lot of effort into being adaptable and making sure my designs are engaging and responsive while remaining pertinent to the needs of my clients and users.</p>
-                </li>
-            </ol>
+            <div class="virtues-wrapper">
+                <h2 class="virtues-ttl">My Virtues</h2>
+                <ol>
+                    <div class="v01">
+                        <li class="virtues">User-Centric</li>
+                        <p class="virtues-desc">I focus on putting people at the heart of my designs. This approach guarantees that my work is intuitive, exciting, and, most importantly, accessible.</p>
+                    </div>
+                    <div class="v02">
+                        <li class="virtues">Sustainable</li>
+                        <p class="virtues-desc">I place sustainability on quite a high pedestal. I make sure to have a positive impact on the environment by reducing waste and energy consumption, as well as using eco-friendly materials and creating long-lasting designs. <strong>Keeping our planet healthy is more important than ever, so I encourage you to make smart decisions.</strong></p>
+                    </div>
+                    <div class="v03">
+                        <li class="virtues">Story-Driven</li>
+                        <p class="virtues-desc">Every element in my designs is intentional and serves a meaningful purpose. I weave stories into my work to create a stronger connection and a more pleasing experience for users and clients.</p>
+                    </div>
+                    <div class="v04">
+                        <li class="virtues">Dynamic</li>
+                        <p class="virtues-desc">My creations are always evolving, just like the rest of the world. I put a lot of effort into being adaptable and making sure my designs are engaging and responsive while remaining pertinent to the needs of my clients and users.</p>
+                    </div>
+                </ol>
+            </div>
         </section>
     </main>
 
-    <footer id="footer">
+    <footer id="footer" class="footer-wrapper">
         <!-- Contact Form -->
-        <!-- Initially, everything except the heading and the 'Let's Chat' button will be visible. When the user clicks the button, the hidden form will be revealed. -->
         <div class="contact-form-wrapper">
             <h2 class="contact-form-heading">Have an idea for a project?</h2>
-            <div class="cta-button-container">
-                <button class="cta-button" type="button">Let's Chat</button>
-            </div>
+            <h3 class="contact-form-subheading">Let's Chat!</h3>
             <form class="contact-form">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" maxlength="256" spellcheck="false" autocapitalize="none" required>
@@ -140,13 +124,15 @@
                 <input type="submit" data-wait="Please wait..." class="submit-button" value="Submit">
             </form>
         </div>
-        <!-- Social Media Icons -->
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/ej-otilla/" class="fa-brands fa-linkedin fa-2x" aria-label="LinkedIn Profile" target="_blank"></a>
-            <a href="https://www.github.com/ej-otilla" class="fa-brands fa-github fa-2x" aria-label="GitHub Profile" target="_blank"></a>
+        <div class="socials-n-copyright-wrapper">
+            <!-- Social Media Icons -->
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/ej-otilla/" class="fa-brands fa-linkedin fa-2x" aria-label="LinkedIn Profile" target="_blank"></a>
+                <a href="https://www.github.com/ej-otilla" class="fa-brands fa-github fa-2x" aria-label="GitHub Profile" target="_blank"></a>
+            </div>
+            <!-- Copyright -->
+            <p class="copyright"><small>&copy; 2024 Evan James Otilla. All Rights Reserved.</small></p>
         </div>
-        <!-- Copyright -->
-        <p><small>&copy; 2024 Evan James Otilla. All Rights Reserved.</small></p>
     </footer>
 </body>
 
