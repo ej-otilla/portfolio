@@ -12,15 +12,15 @@
 /* Root variables for global styling */
 :root {
     font-size: 62.5%; /* Sets 1rem to 10px for easy rem calculations */
-    scroll-behavior: smooth; /* Smooth scrolling behavior */
+    scroll-behavior: smooth;
     --titlefont: "Figtree", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Title font stack */
     --bodyfont: "Quicksand", "Roboto", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Body font stack */
 }
 
 /* Header styling */
 header {
-    font-family: var(--titlefont); /* Sets header font to title font */
-    font-size: 1.5rem; /* Adjusts font size */
+    font-family: var(--titlefont);
+    font-size: 1.5rem;
     display: flex;
     position: relative;
     justify-content: space-between;
@@ -31,10 +31,10 @@ header {
 
 /* Body styling */
 body {
-    background-color: #211e21; /* Dark background */
-    color: #fff; /* White text color for contrast */
-    font-family: var(--bodyfont); /* Body font stack */
-    text-transform: uppercase; /* Uppercase text transformation */
+    background-color: #211e21;
+    color: #fff;
+    font-family: var(--bodyfont);
+    text-transform: uppercase;
 }
 
 /* Ensures images are non-interactive */
@@ -64,9 +64,9 @@ img {
 
 /* Hero title styling */
 .hero-ttl {
-    color: #9caf89; /* Distinct color for hero title */
+    color: #9caf89;
     font-family: var(--titlefont);
-    font-size: 9rem; /* Large title size */
+    font-size: 9rem;
     line-height: 7rem;
     text-wrap: nowrap; /* Prevents text wrapping */
     text-align: center;
@@ -78,7 +78,7 @@ nav {
     font-family: var(--titlefont);
     font-weight: 600;
     display: flex;
-    position: absolute; /* Positions nav in the center */
+    position: absolute;
     justify-content: center;
     align-items: center;
     left: 50%;
@@ -93,24 +93,23 @@ nav {
     justify-content: center;
 }
 
-/* Navbar links with transition effects */
+/* Gives navbar links transition effects */
 .navbar li a {
     color: #fff;
-    border-radius: 5px; /* Rounded corners for links */
-    transition: all 0.2s ease 0s; /* Smooth transition effect */
+    transition: all 0.2s ease 0s;
 }
 
 /* Individual nav link styling */
 .nav-link {
     display: inline-block;
     position: relative;
-    padding: 2rem 0; /* Space around links */
+    padding: 2rem 0;
     margin: 0 2rem;
 }
 
 /* Call-to-action button styling */
 .cta-btn {
-    background-color: transparent; /* Transparent background */
+    background-color: transparent;
     color: #fff;
     font-family: var(--titlefont);
     font-size: 1.5rem;
@@ -119,11 +118,87 @@ nav {
     text-align: center;
     text-transform: uppercase;
     line-height: 2rem;
-    white-space: nowrap; /* Prevents wrapping */
+    white-space: nowrap;
     padding: 1rem 3rem;
-    margin-left: 10rem; /* Spacing from other elements */
+    margin-left: 10rem;
     border: 0.3rem solid rgba(156, 175, 137, 0.8); /* Button border color */
-    border-radius: 4rem; /* Rounded button shape */
+    border-radius: 4rem;
+}
+
+/* Mobile Navigation ----------------------------------------------- */
+/* There is JS already configured for this, but I won't be adding it until the JS lab */
+
+.off-screen-menu {
+    background-color: #211e21;
+    height: 100vh; /* Full viewport height */
+    width: 100%; /* Full width */
+    max-height: 100%; /* Make sure it can expand fully */
+    position: fixed;
+    top: -100vh;  /* Start above the viewport, out of view */
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 3rem;
+    font-family: var(--titlefont);
+    transition: top 0.3s ease;  /* Smooth transition for sliding down */
+}
+
+.off-screen-menu.active {
+    top: 0;
+    max-width: 100%;
+}
+
+.off-screen-menu a {
+    color: #9caf89;
+    font-weight: 600;
+}
+
+.hb-menu {
+    height: 4rem;
+    width: 3rem;
+    margin-left: auto;
+    position: relative;
+}
+
+.hb-menu span {
+    height: 5px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+
+.hb-menu span:nth-child(1) {
+    top: 25%;
+}
+
+.hb-menu span:nth-child(3) {
+    top: 75%;
+}
+
+.hb-menu.active span {
+    background-color: white;
+}
+
+.hb-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.hb-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hb-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 /* Logo ------------------------------------------------------------ */
@@ -136,9 +211,9 @@ nav {
 /* Logo image styling */
 .nav-logo img {
     max-width: 100%; /* Ensures logo doesn’t exceed container width */
-    width: 3vw; /* Sets logo size based on viewport width */
+    width: 15%; /* Sets logo size based on viewport width */
     height: auto; /* Maintains aspect ratio */
-    display: block; /* Removes any inline space */
+    display: block;
 }
 
 /* Logo link styling */
@@ -156,8 +231,8 @@ nav {
 
 /* Active state underline for navigation links */
 .nav-link.active::before {
-    background-color: #9caf89; /* Highlight color */
-    width: 100%; /* Full-width underline */
+    background-color: #9caf89; /* Underline color */
+    width: 100%;
     height: 0.3rem; /* Thickness of underline */
     display: block;
     position: absolute;
@@ -197,7 +272,7 @@ nav {
     background-color: #9caf89; /* Changes background color on hover */
     color: #211e21; /* Changes text color */
     cursor: pointer; /* Changes cursor to pointer */
-    transition: all 0.2s ease 0s; /* Smooth transition */
+    transition: all 0.2s ease 0s;
 }
 
 /* Ensures transition effect for CTA button when not hovered */
@@ -214,17 +289,17 @@ nav {
     display: flex;
     flex-direction: row;
     position: relative;
-    justify-content: center; /* Centers project content */
+    justify-content: center;
     align-items: center;
-    gap: 1.5rem; /* Space between items */
+    gap: 1.5rem;
     margin: 5rem;
 }
 
 /* Styling for images within the featured project */
 .featured-proj img {
-    margin: 2rem 0; /* Vertical spacing */
-    border-radius: 20px; /* Rounded corners */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation on hover */
+    margin: 2rem 0;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Background styling for featured project */
@@ -240,7 +315,7 @@ nav {
 .featured-proj-front {
     box-shadow: 0 0px 10px 1px #9caf89; /* Green shadow effect */
     max-width: 30%; /* Limits foreground width */
-    z-index: 2; /* Places in front of background */
+    z-index: 2; /* Places in front of background images */
     transform: scale(1.05); /* Slight enlargement */
 }
 
@@ -248,7 +323,7 @@ nav {
 
 /* Container styling for blurb and similar sections */
 .featured-proj-wrapper, .blurb-wrapper, .proficiencies-wrapper, .virtues-wrapper {
-    min-height: 100vh; /* Full viewport height */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -260,14 +335,14 @@ nav {
 
 /* Heading styling for blurb and similar sections */
 .featured-proj-heading, .blurb-heading, .proficiencies-ttl, .virtues-ttl {
-    background-color: #9caf89; /* Distinct background color */
-    color: #211e21; /* Dark text color */
-    width: 100%; /* Full width */
+    background-color: #9caf89;
+    color: #211e21;
+    width: 100%;
     font-family: var(--titlefont);
-    font-size: 6rem; /* Large heading size */
+    font-size: 6rem;
     font-weight: 750;
     text-transform: uppercase;
-    text-wrap: nowrap; /* Prevents text wrapping */
+    text-wrap: nowrap;
     padding: 2rem 0;
 }
 
@@ -277,7 +352,7 @@ nav {
     height: 50rem;
     object-fit: cover; /* Ensures image fills container */
     margin: 2rem 0 0;
-    border-radius: 250px 250px 0 0; /* Rounded top edges */
+    border-radius: 250px 250px 0 0;
 }
 
 /* Wrapper for blurb content */
@@ -298,16 +373,16 @@ nav {
 .blurb-desc {
     color: #fff;
     width: 80rem;
-    font-size: 3rem; /* Large text size */
+    font-size: 3rem;
     text-align: left;
-    line-height: 3rem; /* Adjusts line spacing */
+    line-height: 3rem;
     padding-left: 10rem; /* Left padding for indentation */
 }
 
 /* Styling for links within blurb descriptions */
 .blurb-desc a {
     color: #9caf89; /* Highlight color for links */
-    font-weight: 600; /* Bold text */
+    font-weight: 600;
 }
 
 /* ABOUT PAGE ----------------------------------------------------------------------------- */
@@ -316,19 +391,19 @@ nav {
 
 /* Styles for the "About Me" section title */
 .abtme-ttl {
-    color: #9caf89; /* Green text color */
+    color: #9caf89;
     font-family: var(--titlefont);
-    font-size: 5rem; /* Large font size */
+    font-size: 5rem;
     text-align: center;
-    margin-top: 5rem; /* Spacing from top */
+    margin-top: 5rem;
 }
 
 /* Styles for the "About Me" subtitle */
 .abtme-subttl {
     color: #9caf89;
-    font-size: 2rem; /* Smaller font size for subtitle */
+    font-size: 2rem;
     text-align: center;
-    margin-bottom: 2rem; /* Spacing below subtitle */
+    margin-bottom: 2rem;
 }
 
 /* Wrapper for the "About Me" description */
@@ -338,7 +413,7 @@ nav {
     flex-direction: column;
     text-align: center;
     align-items: center;
-    gap: 1rem; /* Space between elements */
+    gap: 1rem;
     margin: auto; /* Centers the wrapper */
 }
 
@@ -347,17 +422,17 @@ nav {
     width: 50rem;
     height: 50rem;
     object-fit: cover; /* Ensures the image fills its container */
-    margin: 5rem; /* Spacing around the image */
-    border-radius: 250px 250px 0 0; /* Rounded top corners */
+    margin: 5rem;
+    border-radius: 250px 250px 0 0;
 }
 
 /* Styling for main description text */
 .abtme-desc {
     font-family: var(--bodyfont);
-    font-size: 1.6rem; /* Standard font size */
+    font-size: 1.6rem;
     text-transform: none; /* No uppercase transformation */
-    line-height: 2rem; /* Line spacing */
-    margin-bottom: 1.5rem; /* Space below text */
+    line-height: 2rem;
+    margin-bottom: 1.5rem;
     max-width: 600px; /* Width limit for readability */
 }
 
@@ -365,49 +440,49 @@ nav {
 
 /* Styles for the skill bar background */
 .skill-bar {
-    background-color: #ffffff; /* White background */
-    width: 100%; /* Full-width */
-    height: 24px; /* Bar height */
+    background-color: #ffffff;
+    width: 100%;
+    height: 24px;
     overflow: hidden;
-    border-radius: 100px; /* Rounded corners */
+    border-radius: 100px;
 }
 
 /* Percentage indicator within skill bar */
 .percentage {
     height: 100%;
     display: flex;
-    font-size: 2rem; /* Large text within bar */
+    font-size: 2rem;
     font-weight: bold;
     align-items: center;
-    justify-content: center; /* Center text horizontally */
+    justify-content: center;
 }
 
 /* Container for the proficiencies content */
 .proficiencies-content {
-    margin: 5rem; /* Space around section */
-    border-spacing: 1rem 1rem; /* Space between skill bars */
-    border-collapse: separate; /* Keeps spacing intact */
+    margin: 5rem;
+    border-spacing: 1rem 1rem;
+    border-collapse: separate;
 }
 
 /* Individual skill bar colors and widths */
 .html {
-    background-color: #e44d26; /* HTML color */
+    background-color: #e44d26; /* HTML colour */
     width: 65%;
 }
 .css {
-    background-color: #264de4; /* CSS color */
+    background-color: #264de4; /* CSS colour */
     width: 55%;
 }
 .ps {
-    background-color: #31a8ff; /* Photoshop color */
+    background-color: #31a8ff; /* Photoshop colour */
     width: 85%;
 }
 .ai {
-    background-color: #ff9a00; /* Illustrator color */
+    background-color: #ff9a00; /* Illustrator colour */
     width: 50%;
 }
 .pr {
-    background-color: #9999ff; /* Premiere color */
+    background-color: #9999ff; /* Premiere Pro colour */
     width: 45%;
 }
 
@@ -417,11 +492,10 @@ nav {
 .virtues-wrapper ol {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Two-column layout */
-    list-style: none; /* Removes default list styling */
     counter-reset: list-counter; /* Resets list counter */
     align-items: flex-start;
-    gap: 40px; /* Space between list items */
-    margin: 5rem; /* Space around section */
+    gap: 40px;
+    margin: 5rem;
 }
 
 /* Styles for individual virtue items */
@@ -442,18 +516,18 @@ nav {
     font-size: 1.6rem;
     text-transform: none;
     line-height: 2rem; /* Line spacing for readability */
-    margin-top: 10px; /* Space above description */
+    margin-top: 10px;
 }
 
 /* Numbering for virtues */
 .virtues::before {
-    color: #9caf89; /* Green color for numbers */
+    color: #9caf89;
     display: block;
     font-family: var(--titlefont);
-    font-size: 3rem; /* Larger size for numbers */
+    font-size: 3rem;
     content: counter(list-counter, decimal-leading-zero); /* Auto-increments number */
     counter-increment: list-counter;
-    margin-bottom: 10px; /* Space below number */
+    margin-bottom: 10px;
 }
 
 /* Underline styling for emphasized text within virtues */
@@ -471,13 +545,13 @@ div[class^='v0'], div[class*='v0'] {
 
 /* Footer container */
 #footer {
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
     font-family: var(--titlefont);
     display: flex;
     flex-direction: column;
     text-transform: uppercase;
     align-items: center;
-    justify-content: space-between; /* Spaces out footer content */
+    justify-content: space-between;
     padding: 4rem 0;
 }
 
@@ -488,28 +562,28 @@ label, textarea {
     max-height: 250px; 
     min-height: 100px;
     width: 100%;
-    resize: none; /* Disables resizing */
+    resize: none; /* Disables resizing the textbox*/
 }
 
 /* Wrapper for the contact form */
 .contact-form-wrapper {
     max-width: 800px;
     width: 100%;
-    background-color: rgba(156, 175, 137, 0.9); /* Semi-transparent green background */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    padding: 3rem 3rem; /* Inner padding */
-    border-radius: 25px; /* Rounded corners */
+    background-color: rgba(156, 175, 137, 0.9);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 3rem 3rem;
+    border-radius: 25px;
     margin-top: auto;
     margin-bottom: auto;
 }
 
 /* Main heading for contact form */
 .contact-form-heading {
-    color: #211e21; /* Dark text color */
-    font-size: 4.8rem; /* Large font size */
+    color: #211e21;
+    font-size: 4.8rem;
     font-weight: 750;
     text-align: center;
-    text-wrap: nowrap; /* Prevents line wrapping */
+    text-wrap: nowrap;
 }
 
 /* Subheading for contact form */
@@ -519,7 +593,7 @@ label, textarea {
     color: #211e21;
     text-align: center;
     font-weight: 500;
-    margin-bottom: 2rem; /* Space below subheading */
+    margin-bottom: 2rem;
     text-wrap: nowrap;
 }
 
@@ -539,9 +613,9 @@ label, textarea {
     width: 100%;
     font-family: var(--titlefont);
     font-size: 1.5rem;
-    padding: 1.4rem; /* Inner padding */
-    margin-bottom: 1.6rem; /* Spacing between fields */
-    border: 2px solid #788869; /* Initial border color */
+    padding: 1.4rem;
+    margin-bottom: 1.6rem;
+    border: 2px solid #788869;
     border-radius: 6px;
     transition: border-color 0.3s ease; /* Smooth transition on focus */
 }
@@ -554,18 +628,18 @@ label, textarea {
 
 /* Submit button styling */
 .contact-form input[type="submit"] {
-    background-color: #211e21; /* Dark background */
+    background-color: #211e21;
     color: #fff;
     width: 100%;
     font-family: var(--bodyfont);
     font-size: 1.5rem;
     font-weight: 800;
     text-transform: uppercase;
-    cursor: pointer; /* Pointer cursor on hover */
+    cursor: pointer;
     padding: 1.4rem;
     border: none;
     border-radius: 6px;
-    transition: background-color 0.3s ease; /* Smooth transition */
+    transition: background-color 0.3s ease;
 }
 
 /* Hover effect for submit button */
@@ -580,7 +654,6 @@ label, textarea {
 
 /* Social Media Icons and Copyright -------------------------------- */
 
-/* Wrapper for social icons and copyright text */
 .socials-n-copyright-wrapper {
     display: flex;
     flex-direction: column;
@@ -588,17 +661,15 @@ label, textarea {
     justify-content: center;
 }
 
-/* Container for social media icons */
 .social-icons {
     display: flex;
-    gap: 1rem; /* Space between icons */
+    gap: 1rem;
     margin-bottom: 1rem;
 }
 
-/* Social icon link styling */
 .social-icons a {
-    color: #fff; /* White icon color */
-    font-size: 3rem; /* Large icon size */
+    color: #fff;
+    font-size: 3rem;
 }
 
 /* Hover effect for social icons */
@@ -613,4 +684,86 @@ label, textarea {
     color: #fff;
     font-size: 1.2rem;
     text-align: center;
+}
+
+/* Media Queries --------------------------------------------------- */
+
+@media only screen and (max-width: 768px) {
+    .hero-ttl {
+        font-size: 6rem;
+        line-height: 4.5rem;
+        white-space: nowrap;
+    }
+    
+    nav {
+        position: static;
+    }
+
+    .nav-link, .wwm {
+        display: none;
+    }
+
+    .hb-menu {
+        display: flex;
+        justify-content: right;
+        align-items: right;
+        position: absolute;
+    }
+
+    .featured-proj-front {
+        max-width: 70%;
+    }
+
+    .featured-proj-bg {
+        display: none;
+    }
+
+    .featured-proj-heading, .blurb-heading, .proficiencies-ttl, .virtues-ttl {
+        font-size: 4rem;
+        padding: 1.5rem 0;
+    }
+
+    .professional-portrait {
+        width: 35rem;
+        height: 35rem;
+        margin: 1.5rem 0;
+    }
+
+    .blurb-content {
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem;
+    }
+
+    .blurb-text {
+        align-items: center;
+        justify-content: center;
+        margin: 5rem 0;
+    }
+
+    .blurb-desc {
+        width: 90%;
+        font-size: 2.2rem;
+        text-align: center;
+        line-height: 2.8rem;
+        padding: 0 2rem;
+    }
+
+    .cta-btn {
+        padding: 1rem 2rem;
+        margin-top: 2rem;
+        margin-left: 0;
+    }
+
+    .contact-form-heading {
+        font-size: 3.5rem;
+    }
+
+    .contact-form-subheading {
+        font-size: 2rem;
+    }
+
+    .contact-form-wrapper {
+        max-width: 600px;
+    }
 }
