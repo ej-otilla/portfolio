@@ -371,6 +371,57 @@ nav {
     width: 45%; background-color: #9999ff;
 }
 
+
+/* Virtues --------------------------------------------------------- */
+
+.virtues-wrapper ol {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    counter-reset: list-counter;
+    margin: 5rem;
+    align-items: flex-start;
+}
+
+.virtues {
+    font-family: var(--titlefont);
+    font-size: 2rem;
+    color: #fff;
+    margin: 0 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.virtues-desc {
+    font-family: var(--bodyfont);
+    font-size: 1.6rem;
+    color: #fff;
+    line-height: 2rem;
+    margin-top: 10px;
+    text-transform: none;
+}
+
+.virtues::before {
+    content: counter(list-counter, decimal-leading-zero);
+    counter-increment: list-counter;
+    font-size: 3rem;
+    font-family: var(--titlefont);
+    color: #9caf89;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.virtues-desc strong {
+    text-decoration: underline;
+}
+
+div[class^='v0'], div[class*='v0'] { 
+    text-align: left;
+    max-width: 60rem;
+}
+
 /* General Footer Styles ------------------------------------------- */
 
 #footer {
