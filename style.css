@@ -19,18 +19,18 @@ header {
     font-family: var(--titlefont);
     font-size: 1.5rem;
     display: flex;
+    position: relative;
     justify-content: space-between;
     align-items: center;
     vertical-align: baseline;
     padding: 0 5rem;
     padding-top: 5rem;
-    position: relative;
 }
 
 body {
-    font-family: var(--bodyfont);
     background-color: #211e21;
     color: #fff;
+    font-family: var(--bodyfont);
     text-transform: uppercase;
 }
 
@@ -44,30 +44,30 @@ img {
 
 .hero {
     height: 100vh;
-    flex: 1;
     display: flex;
     flex-direction: column;
+    flex: 1;
     position: relative;
     justify-content: center;
 }
 
 .hero-ttl-wrapper {
+    height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 80px);
 }
 
 .hero-ttl {
+    color: #9caf89;
     font-family: var(--titlefont);
     font-size: 9rem;
     line-height: 7rem;
+    text-wrap: nowrap;
     flex: 0 0 auto;
-    color: #9caf89;
     text-align: center;
     justify-content: center;
-    text-wrap: nowrap;
 }
 
 /* Navigation Bar -------------------------------------------------- */
@@ -75,46 +75,46 @@ img {
 nav {
     font-family: var(--titlefont);
     font-weight: 600;
-    flex: 1;
     display: flex;
+    flex: 1;
+    position: absolute;
     justify-content: center;
     align-items: center;
-    position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .navbar {
     display: flex;
-    justify-content: center;
     flex-grow: 1;
     position: relative;
+    justify-content: center;
 }
 
 .navbar li a {
-    transition: all 0.2s ease 0s;
-    border-radius: 5px;
     color: #fff;
+    border-radius: 5px;
+    transition: all 0.2s ease 0s;
 }
 
 .nav-link {
-    padding: 2rem 0;
-    margin: 0 2rem;
     display: inline-block;
     position: relative;
+    padding: 2rem 0;
+    margin: 0 2rem;
 }
 
-/* Logo */
+/* Logo ------------------------------------------------------------ */
 
 .nav-logo {
     flex: 0 0 auto;
 }
 
 .nav-logo img {
-    display: block;
-    width: 3vw;
     max-width: 100%;
+    width: 3vw;
     height: auto;
+    display: block;
 }
 
 .nav-logo a {
@@ -123,20 +123,20 @@ nav {
 }
 
 .cta-btn {
-    display: inline-block;
-    text-align: center;
-    line-height: 2rem;
-    padding: 1rem 3rem;
     background-color: transparent;
     color: #fff;
+    font-family: var(--titlefont);
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 2rem;
+    white-space: nowrap;
+    padding: 1rem 3rem;
+    margin-left: 10rem;
     border: 0.3rem solid rgba(156, 175, 137, 0.8);
     border-radius: 4rem;
-    font-family: var(--titlefont);
-    white-space: nowrap;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    margin-left: 10rem;
 }
 
 /* Navigation Bar Animations --------------------------------------- */
@@ -146,16 +146,16 @@ nav {
 }
 
 .nav-link.active::before {
-    content: "";
-    position: absolute;
-    display: block;
+    background-color: #9caf89;
     width: 100%;
     height: 0.3rem;
+    display: block;
+    position: absolute;
     bottom: 1rem;
     left: 0;
-    background-color: #9caf89;
-    transform: scaleX(1);
+    content: "";
     transition: transform 0.3s ease;
+    transform: scaleX(1);
 }
 
 .nav-link:hover:not(.active)::before {
@@ -163,16 +163,16 @@ nav {
 }
 
 .nav-link::before {
-    content: "";
-    position: absolute;
-    display: block;
+    background-color: #9caf89;
     width: 100%;
     height: 0.3rem;
+    display: block;
+    position: absolute;
     bottom: 1rem;
     left: 0;
-    background-color: #9caf89;
-    transform: scaleX(0);
+    content: "";
     transition: transform 0.3s ease;
+    transform: scaleX(0);
 }
 
 .nav-link:hover::before {
@@ -180,10 +180,10 @@ nav {
 }
 
 .cta-btn:hover {
-    transition: all 0.2s ease 0s;
     background-color: #9caf89;
     color: #211e21;
     cursor: pointer;
+    transition: all 0.2s ease 0s;
 }
 
 .cta-btn:not(:hover) {
@@ -193,15 +193,15 @@ nav {
 /* Featured Project ------------------------------------------------ */
 
 .featured-proj {
+    max-width: 80%;
+    max-height: 100%;
     display: flex;
+    flex-direction: row;
+    position: relative;
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
-    max-width: 80%;
-    max-height: 100%;
     margin: 5rem;
-    flex-direction: row;
-    position: relative;
 }
 
 .featured-proj img {
@@ -212,42 +212,42 @@ nav {
 
 .featured-proj-bg {
     max-width: 25%;
-    filter: blur(0.3rem);
+    position: relative;
     opacity: 0.50;
     z-index: 0;
-    position: relative;
+    filter: blur(0.3rem);
 }
 
 .featured-proj-front {
+    box-shadow: 0 0px 10px 1px #9caf89;
     max-width: 30%;
     z-index: 2;
-    box-shadow: 0 0px 10px 1px #9caf89;
     transform: scale(1.05);
 }
 
 /* Blurb ----------------------------------------------------------- */
 
 .featured-proj-wrapper, .blurb-wrapper, .proficiencies-wrapper, .virtues-wrapper {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    margin: auto;
     text-align: center;
     text-transform: none;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
 }
 
 .featured-proj-heading, .blurb-heading, .proficiencies-ttl, .virtues-ttl {
+    background-color: #9caf89;
+    color: #211e21;
+    width: 100%;
     font-family: var(--titlefont);
     font-size: 6rem;
     font-weight: 750;
-    color: #211e21;
     text-transform: uppercase;
-    background-color: #9caf89;
-    padding: 2rem 0;
-    width: 100%;
     text-wrap: nowrap;
+    padding: 2rem 0;
 }
 
 .blurb-content {
@@ -263,20 +263,20 @@ nav {
 }
 
 .professional-portrait {
-    border-radius: 250px 250px 0 0;
-    margin: 2rem 0 0;
     width: 50rem;
     height: 50rem;
     object-fit: cover;
+    margin: 2rem 0 0;
+    border-radius: 250px 250px 0 0;
 }
 
 .blurb-desc {
-    font-size: 3rem;
-    line-height: 3rem; 
     color: #fff;
-    text-align: left;
-    padding-left: 10rem;
     width: 80rem;
+    font-size: 3rem;
+    text-align: left;
+    line-height: 3rem; 
+    padding-left: 10rem;
 }
 
 .blurb-desc a {
@@ -289,64 +289,64 @@ nav {
 /* About Me -------------------------------------------------------- */
 
 .abtme-ttl {
+    color: #9caf89;
     font-family: var(--titlefont);
     font-size: 5rem;
-    color: #9caf89;
     text-align: center;
     margin-top: 5rem;
 }
 
 .abtme-subttl {
-    font-size: 2rem;
     color: #9caf89;
+    font-size: 2rem;
     text-align: center;
     margin-bottom: 2rem;
 }
 
 .abtme-desc-wrapper {
+    max-width: 800px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    max-width: 800px;
-    margin: auto;
     text-align: center;
+    align-items: center;
     gap: 1rem;
+    margin: auto;
 }
 
 .professional-portrait {
-    border-radius: 250px 250px 0 0;
-    margin: 5rem;
     width: 50rem;
     height: 50rem;
     object-fit: cover;
+    margin: 5rem;
+    border-radius: 250px 250px 0 0;
 }
 
 .abtme-desc {
     font-family: var(--bodyfont);
     font-size: 1.6rem;
+    text-transform: none;
     line-height: 2rem;
     margin-bottom: 1.5rem;
     max-width: 600px;
-    text-transform: none;
 }
 
 /* Proficiencies --------------------------------------------------- */
 
 .skill-bar {
     background-color: #ffffff;
-    border-radius: 100px;
-    overflow: hidden;
     width: 100%;
     height: 24px;
+    overflow: hidden;
+    border-radius: 100px;
 }
 
 .percentage {
     height: 100%;
+    display: flex;
     font-size: 2rem;
     font-weight: bold;
     align-items: center;
     justify-content: center;
-    display: flex;
 }
 
 .proficiencies-content {
@@ -356,60 +356,65 @@ nav {
 }
 
 .html {
-    width: 65%; background-color: #e44d26;
+    background-color: #e44d26;
+    width: 65%;
 }
 .css {
-    width: 55%; background-color: #264de4;
+    background-color: #264de4;
+    width: 55%;
 }
 .ps {
-    width: 85%; background-color: #31a8ff;
+    background-color: #31a8ff;
+    width: 85%;
 }
 .ai {
-    width: 50%; background-color: #ff9a00;
+    background-color: #ff9a00;
+    width: 50%;
 }
 .pr {
-    width: 45%; background-color: #9999ff;
+    background-color: #9999ff;
+    width: 45%;
 }
 
 
 /* Virtues --------------------------------------------------------- */
 
 .virtues-wrapper ol {
-    list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    list-style: none;
     counter-reset: list-counter;
-    margin: 5rem;
     align-items: flex-start;
+    gap: 40px;
+    margin: 5rem;
 }
 
 .virtues {
-    font-family: var(--titlefont);
-    font-size: 2rem;
     color: #fff;
-    margin: 0 0 1rem;
     display: flex;
     flex-direction: column;
+    font-family: var(--titlefont);
+    font-size: 2rem;
     align-items: flex-start;
+    margin: 0 0 1rem;
 }
 
 .virtues-desc {
+    color: #fff;
     font-family: var(--bodyfont);
     font-size: 1.6rem;
-    color: #fff;
+    text-transform: none;
     line-height: 2rem;
     margin-top: 10px;
-    text-transform: none;
 }
 
 .virtues::before {
-    content: counter(list-counter, decimal-leading-zero);
-    counter-increment: list-counter;
-    font-size: 3rem;
-    font-family: var(--titlefont);
     color: #9caf89;
     display: block;
+    font-family: var(--titlefont);
+    font-size: 3rem;
+    content: counter(list-counter, decimal-leading-zero);
+    counter-increment: list-counter;
     margin-bottom: 10px;
 }
 
@@ -418,48 +423,48 @@ nav {
 }
 
 div[class^='v0'], div[class*='v0'] { 
-    text-align: left;
     max-width: 60rem;
+    text-align: left;
 }
 
 /* General Footer Styles ------------------------------------------- */
 
 #footer {
+    height: 100vh;
     font-family: var(--titlefont);
     display: flex;
     flex-direction: column;
+    text-transform: uppercase;
     align-items: center;
     justify-content: space-between;
-    height: 100vh;
     padding: 4rem 0;
-    text-transform: uppercase;
 }
 
 /* Contact Form ---------------------------------------------------- */
 
 label, textarea { 
-    width: 100%;
     max-height: 250px; 
     min-height: 100px;
+    width: 100%;
     resize: none;
 }
 
 .contact-form-wrapper {
-    background-color: rgba(156, 175, 137, 0.9);
-    border-radius: 25px;
-    padding: 3rem 3rem;
     max-width: 800px;
     width: 100%;
+    background-color: rgba(156, 175, 137, 0.9);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: auto;
+    padding: 3rem 3rem;
+    border-radius: 25px;
     margin-top: auto;
+    margin-bottom: auto;
 }
 
 .contact-form-heading {
-    font-size: 4.8rem;
     color: #211e21;
-    text-align: center;
+    font-size: 4.8rem;
     font-weight: 750;
+    text-align: center;
     text-wrap: nowrap;
 }
 
@@ -474,23 +479,23 @@ label, textarea {
 }
 
 .contact-form label {
-    text-align: left;
+    color: #211e21;
     font-size: 1.5rem;
     font-weight: 500;
-    color: #211e21;
+    text-align: left;
     margin-bottom: 0.5rem;
 }
 
 .contact-form input, .contact-form textarea {
-    font-family: var(--titlefont);
+    background-color: #fff;
+    color: #333;
     width: 100%;
+    font-family: var(--titlefont);
+    font-size: 1.5rem;
     padding: 1.4rem;
     margin-bottom: 1.6rem;
     border: 2px solid #788869;
     border-radius: 6px;
-    background-color: #fff;
-    font-size: 1.5rem;
-    color: #333;
     transition: border-color 0.3s ease;
 }
 
@@ -500,18 +505,18 @@ label, textarea {
 }
 
 .contact-form input[type="submit"] {
-    font-family: var(--bodyfont);
-    text-transform: uppercase;
     background-color: #211e21;
-    border: none;
-    cursor: pointer;
     color: #fff;
-    font-size: 1.5rem;
-    padding: 1.4rem;
-    border-radius: 6px;
     width: 100%;
-    transition: background-color 0.3s ease;
+    font-family: var(--bodyfont);
+    font-size: 1.5rem;
     font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 1.4rem;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
 }
 
 .contact-form input[type="submit"]:hover {
@@ -543,13 +548,13 @@ label, textarea {
 }
 
 .social-icons a:hover {
+    color: rgba(255, 255, 255, 0.8);
     transform: scale(1.05);
     transition: all 0.3s ease;
-    color: rgba(255, 255, 255, 0.8)
 }
 
 .copyright {
-    text-align: center;
     color: #fff;
     font-size: 1.2rem;
+    text-align: center;
 }
