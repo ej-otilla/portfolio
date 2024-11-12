@@ -677,7 +677,15 @@ label, textarea {
 
 /* Media Queries --------------------------------------------------- */
 
+@media only screen and (min-width: 640px) {
+    
+}
+
 @media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (min-width: 1024px) {
     .hero-ttl {
         font-size: 9rem;
         line-height: 7rem;
@@ -715,17 +723,17 @@ label, textarea {
 
     .featured-proj-front {
         max-width: 30%;
-        z-index: 2; /* Places in front of background images */
-        transform: scale(1.05); /* Slight enlargement */
+        z-index: 2;
+        transform: scale(1.05);
     }
 
     .featured-proj-bg {
         display: flex;
-        max-width: 25%; /* Limits background width */
+        max-width: 25%;
         position: relative;
-        opacity: 0.50; /* Semi-transparent */
-        z-index: 0; /* Places behind other elements */
-        filter: blur(0.3rem); /* Adds slight blur effect */
+        opacity: 0.50;
+        z-index: 0;
+        filter: blur(0.3rem);
     }
 
     .featured-proj-heading, .blurb-heading, .proficiencies-ttl, .virtues-ttl {
@@ -738,30 +746,27 @@ label, textarea {
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        width: 80%; /* Keeps content centered on the screen */
+        width: 80%;
         margin: 0 auto;
-        gap: 2rem; /* Space between image and text */
+        gap: 2rem;
     }
 
-    /* Adjust the image size and alignment */
     .professional-portrait {
         width: 50rem;
         height: 50rem;
-        align-self: flex-start; /* Aligns image to the top of text */
+        align-self: flex-start;
     }
 
-    /* Blurb description alignment */
     .blurb-desc {
         text-align: left;
         font-size: 2.2rem;
         line-height: 2.5rem;
-        max-width: 100rem;
-        min-width: 60rem;
-        width: 100%; /* Allow it to take up available space */
+        max-width: 60rem;
+        white-space: wrap;
+        width: 100%;
         padding: 0;
     }
 
-    /* Learn More button styling */
     .lm {
         display: block;
         text-align: left;
@@ -781,14 +786,13 @@ label, textarea {
         font-size: 2.5rem;
     }
 
-    /* Hover effect for social icons */
     .social-icons a:hover {
-        color: rgba(255, 255, 255, 0.8); /* Slightly transparent on hover */
+        color: rgba(255, 255, 255, 0.8);
         transition: all 0.3s ease;
     }
 
     .social-icons a:not(:hover) {
-        color: #fff; /* Slightly transparent on hover */
+        color: #fff;
         transition: all 0.3s ease;
     }
 }
