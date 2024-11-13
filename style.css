@@ -26,6 +26,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 5rem 5rem 0;
+    margin-bottom: 3rem;
 }
 
 /* Body styling */
@@ -409,6 +410,7 @@ nav {
     flex-direction: column;
     text-align: center;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
     margin: auto; /* Centers the wrapper */
 }
@@ -532,7 +534,7 @@ nav {
 }
 
 /* Container for virtue descriptions */
-div[class^='v0'], div[class*='v0'] { 
+li[class^='v0'], li[class*='v0'] { 
     max-width: 60rem; /* Width limit for readability */
     text-align: left;
 }
@@ -751,10 +753,23 @@ label, textarea {
         gap: 2rem;
     }
 
+    .abtme-desc-wrapper {
+        max-width: 800px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 1rem;
+        margin: auto;
+    }
+
     .professional-portrait {
         width: 50rem;
         height: 50rem;
-        align-self: flex-start;
+        object-fit: cover;
+        margin: 5rem;
+        border-radius: 250px 250px 0 0;
+        display: block;
     }
 
     .blurb-desc {
