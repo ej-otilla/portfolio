@@ -66,9 +66,8 @@ img {
 .hero-ttl {
     color: #9caf89;
     font-family: var(--titlefont);
-    font-size: 6rem;
-    line-height: 4.5rem;
-    white-space: nowrap; /* Prevents text wrapping */
+    font-size: 3.5rem;
+    line-height: 2.7rem;
     text-align: center;
     justify-content: center;
 }
@@ -114,7 +113,7 @@ nav {
     text-transform: uppercase;
     line-height: 2rem;
     white-space: nowrap;
-    padding: 1rem 2rem;
+    padding: 1rem 3rem;
     margin-left: 0;
     border: 0.3rem solid rgba(156, 175, 137, 0.8); /* Button border color */
     border-radius: 4rem;
@@ -307,7 +306,7 @@ nav {
 /* Foreground styling for featured project */
 .featured-proj-front {
     box-shadow: 0 0px 10px 1px #9caf89; /* Green shadow effect */
-    max-width: 70%; /* Limits foreground width */
+    max-width: 80%; /* Limits foreground width */
     z-index: 2; /* Places in front of background images */
     transform: scale(1.05); /* Slight enlargement */
 }
@@ -317,6 +316,7 @@ nav {
 /* Container styling for blurb and similar sections */
 .featured-proj-wrapper, .blurb-wrapper, .proficiencies-wrapper, .virtues-wrapper {
     min-height: 100vh;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -332,7 +332,7 @@ nav {
     color: #211e21;
     width: 100%;
     font-family: var(--titlefont);
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 750;
     text-transform: uppercase;
     white-space: nowrap;
@@ -354,7 +354,6 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
 }
 
 /* Container for blurb text */
@@ -370,9 +369,9 @@ nav {
 .blurb-desc {
     color: #fff;
     width: 90%;
-    font-size: 2.2rem;
+    font-size: 1.7rem;
     text-align: center;
-    line-height: 2.8rem;
+    line-height: 2.2rem;
     padding: 0 2rem;
 }
 
@@ -405,7 +404,7 @@ nav {
 
 /* Wrapper for the "About Me" description */
 .abtme-desc-wrapper {
-    max-width: 800px; /* Limits the width of the content */
+    max-width: 100%; /* Limits the width of the content */
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -417,10 +416,10 @@ nav {
 
 /* Styling for professional portrait image */
 .professional-portrait {
-    width: 50rem;
-    height: 50rem;
+    width: 30rem;
+    height: 30rem;
     object-fit: cover; /* Ensures the image fills its container */
-    margin: 5rem;
+    margin: 5rem 5rem 0;
     border-radius: 250px 250px 0 0;
 }
 
@@ -565,7 +564,7 @@ label, textarea {
 
 /* Wrapper for the contact form */
 .contact-form-wrapper {
-    max-width: 600px;
+    max-width: 300px;
     width: 100%;
     background-color: rgba(156, 175, 137, 0.9);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -578,16 +577,17 @@ label, textarea {
 /* Main heading for contact form */
 .contact-form-heading {
     color: #211e21;
-    font-size: 3.5rem;
+    font-size: 2.9rem;
     font-weight: 750;
     text-align: center;
-    white-space: nowrap;
+    line-height: 2.7rem;
+    margin-bottom: 0.5rem;
 }
 
 /* Subheading for contact form */
 .contact-form-subheading {
     font-family: var(--bodyfont);
-    font-size: 2rem;
+    font-size: 1.9rem;
     color: #211e21;
     text-align: center;
     font-weight: 500;
@@ -598,7 +598,7 @@ label, textarea {
 /* Label styling within the contact form */
 .contact-form label {
     color: #211e21;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 500;
     text-align: left;
     margin-bottom: 0.5rem;
@@ -680,17 +680,154 @@ label, textarea {
 /* Media Queries --------------------------------------------------- */
 
 @media only screen and (min-width: 640px) {
+    .hero-ttl {
+        font-size: 5rem;
+        line-height: 3.8rem;
+    }
     
+    nav {
+        position: static;
+    }
+
+    .nav-link {
+        display: none;
+    }
+
+    .wwm {
+        display: none !important;
+    }
+
+    .featured-proj-front {
+        max-width: 70%;
+        z-index: 2;
+        transform: scale(1.05);
+    }
+
+    .featured-proj-bg {
+        display: none;
+    }
+
+    .featured-proj-heading, .blurb-heading, .proficiencies-ttl, .virtues-ttl {
+        font-size: 4rem;
+    }
+
+    .abtme-desc-wrapper {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 1rem;
+        margin: auto;
+    }
+
+    .professional-portrait {
+        width: 40rem;
+        height: 40rem;
+        display: block;
+    }
+
+    .blurb-desc {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        max-width: 50rem;
+        white-space: wrap;
+        padding: 0;
+    }
+
+    .contact-form-wrapper {
+        max-width: 550px;
+    }
+
+    .contact-form-heading {
+        font-size: 3.2rem;
+        white-space: nowrap;
+    }
+
+    .contact-form-subheading {
+        font-size: 1.8rem;
+    }
 }
 
 @media only screen and (min-width: 768px) {
+    .hero-ttl {
+        font-size: 6rem;
+        line-height: 4.5rem;
+    }
+    
+    nav {
+        position: static;
+    }
 
+    .nav-link {
+        display: none;
+    }
+
+    .wwm {
+        display: none !important;
+    }
+
+    .featured-proj-front {
+        max-width: 70%;
+        z-index: 2;
+        transform: scale(1.05);
+    }
+
+    .featured-proj-bg {
+        display: none;
+    }
+
+    .featured-proj-heading, .blurb-heading, .proficiencies-ttl, .virtues-ttl {
+        font-size: 4rem;
+        padding: 1.5rem 0;
+    }
+
+    .abtme-desc-wrapper {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 1rem;
+        margin: auto;
+    }
+
+    .professional-portrait {
+        width: 50rem;
+        height: 50rem;
+        object-fit: cover;
+        margin: 5rem;
+        border-radius: 250px 250px 0 0;
+        display: block;
+    }
+
+    .blurb-desc {
+        font-size: 2.2rem;
+        line-height: 2.8rem;
+        max-width: 55rem;
+        white-space: wrap;
+        width: 90%;
+        padding: 0;
+    }
+
+    .contact-form-wrapper {
+        max-width: 600px;
+    }
+
+    .contact-form-heading {
+        font-size: 3.5rem;
+        white-space: nowrap;
+    }
+
+    .contact-form-subheading {
+        font-size: 2rem;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
     .hero-ttl {
-        font-size: 9rem;
-        line-height: 7rem;
+        font-size: 8rem;
+        line-height: 6rem;
     }
     
     nav {
@@ -713,10 +850,6 @@ label, textarea {
 
     .wwm {
         display: flex !important;
-    }
-
-    .cta-btn {
-        padding: 1rem 3rem;
     }
 
     .hb-menu {
@@ -795,6 +928,8 @@ label, textarea {
 
     .contact-form-heading {
         font-size: 4.8rem;
+        margin-top: 1.5rem;
+        white-space: nowrap;
     }
 
     .contact-form-subheading {
