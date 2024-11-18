@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+/* RESET AND GLOBAL STYLES ----------------------------------------------------------------------------------------------------------- */
+
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -8,23 +10,29 @@
     text-decoration: none;
 }
 
+/* Root variables for font and global settings */
+
 :root {
-    font-size: 62.5%;
-    scroll-behavior: smooth;
+    font-size: 62.5%; /* Enables rem scaling based on 10px = 1rem */
     --titlefont: "Figtree", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --bodyfont: "Quicksand", "Roboto", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
 }
+
+/* HEADER STYLES --------------------------------------------------------------------------------------------------------------------- */
 
 header {
     font-family: var(--titlefont);
     font-size: 1.5rem;
-    display: flex;
+    display: flex; /* Flexbox layout for child alignment */
     position: relative;
     justify-content: space-between;
     align-items: center;
     padding: 5rem 5rem 0;
     margin-bottom: 3rem;
 }
+
+/* BODY & TEXT STYLES ---------------------------------------------------------------------------------------------------------------- */
 
 body {
     background-color: #211e21;
@@ -33,13 +41,17 @@ body {
     text-transform: uppercase;
 }
 
+/* This is for the JS interaction with the off-screen menu */
+
 body.no-scroll {
-    overflow: hidden;
+    overflow: hidden; /* Prevents the user from scrolling */
 }
 
 img {
-    pointer-events: none;
+    pointer-events: none; /* Prevents user interaction with images */
 }
+
+/* SECTIONS LAYOUT ------------------------------------------------------------------------------------------------------------------- */
 
 .featured-proj-wrapper, .blurb-wrapper, .proficiencies-wrapper, .virtues-wrapper {
     min-height: 100vh;
@@ -52,6 +64,8 @@ img {
     align-items: center;
     margin: auto;
 }
+
+/* COMMON HEADINGS ------------------------------------------------------------------------------------------------------------------- */
 
 .featured-proj-heading, .blurb-heading, .proficiencies-ttl, .virtues-ttl {
     background-color: #9caf89;
@@ -69,6 +83,8 @@ img {
 
 /* Greeting ----------------------------------------------------------------------------------- */
 
+/* Base styles for the greeting text */
+
 .greeting {
     font-family: var(--titlefont);
     font-size: 3rem;
@@ -76,6 +92,8 @@ img {
     padding: 2rem;
     margin: 1rem 0 0;
 }
+
+/* Dynamic styles based on time of day */
 
 .greeting.morning {
     color: #e09200;
@@ -97,10 +115,14 @@ img {
 
 /* Alert Button ------------------------------------------------------------------------------- */
 
+/* Wrapper for centering the alert button */
+
 .tmp-btn-wrapper {
     text-align: center;
     margin: 2rem;
 }
+
+/* Alert button base styling */
 
 #tmpBtnAlert {
     font-family: var(--bodyfont);
@@ -108,57 +130,71 @@ img {
     background-color: #9caf89;
     color: #211e21;
     border: none;
-    border-radius: 10px;
+    border-radius: 10px; /* Rounded corners */
     padding: 1rem 2rem;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
 }
 
+/* Alert button hover effects */
+
 #tmpBtnAlert:hover {
-    background-color: #879776;
-    transform: scale(1.1);
+    background-color: #879776; /* Slightly darker green on hover */
+    transform: scale(1.1); /* Enlarges the button for emphasis */
 }
 
 
 /* Hero --------------------------------------------------------------------------------------- */
 
+/* Full-screen hero container with centered content */
+
 .hero {
-    height: 100vh;
+    height: 100vh; /* Full viewport height */
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    position: relative;
+    justify-content: center; /* Vertically centers content */
+    position: relative; /* Allows for positioning child elements */
 }
 
+/* Wrapper for hero title, with slight height adjustment to center it to the page */
+
 .hero-ttl-wrapper {
-    height: calc(100vh - 80px);
+    height: calc(100vh - 80px); /* Accounts for the height of the navigation bar */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; /* Centers content horizontally */
 }
+
+/* Styling for the hero title */
 
 .hero-ttl {
     color: #9caf89;
     font-family: var(--titlefont);
     font-size: 3.5rem;
     line-height: 2.7rem;
-    text-align: center;
+    text-align: center; /* Centers text within its container */
     justify-content: center;
 }
 
 /* Navigation Bar Logo ------------------------------------------------------------------------ */
 
+/* Container for the logo, prevents shrinking or growing in flex layout */
+
 .nav-logo {
-    flex: 0 0 auto;
+    flex: 0 0 auto; /* Fixed size, unaffected by flexbox growth/shrink rules */
 }
 
+/* Logo image styling */
+
 .nav-logo img {
-    max-width: 100%;
-    width: 30px;
-    height: auto;
-    display: block;
+    max-width: 100%; /* Ensures responsiveness */
+    width: 30px; /* Fixed width for consistency */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Removes inline spacing issues */
 }
+
+/* Anchor element for the logo */
 
 .nav-logo a {
     width: 0;
@@ -167,29 +203,41 @@ img {
 
 /* Navigation Bar ----------------------------------------------------------------------------- */
 
+/* Base navigation container */
+
 nav {
-    position: static;
+    position: static; /* Default document flow positioning */
 }
+
+/* Flexbox layout for navigation bar items */
 
 .navbar {
     display: flex;
-    flex-grow: 1;
-    position: relative;
+    flex-grow: 1; /* Expands to fill available space */
+    position: relative; /* Allows for child element positioning */
     justify-content: center;
 }
 
+/* Links within the navigation bar */
+
 .navbar li a {
     color: #fff;
-    transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s; /* Smooth hover effects */
 }
+
+/* Hidden links for mobile navigation */
 
 .nav-link {
-    display: none;
+    display: none; /* Initially hidden, controlled via media queries or scripts */
 }
 
+/* Overrides for "Work With Me" button */
+
 .wwm {
-    display: none !important;
+    display: none !important; /* Forces hidden visibility regardless of overrides */
 }
+
+/* Styles for all call-to-action buttons */
 
 .cta-btn {
     background-color: transparent;
@@ -197,11 +245,11 @@ nav {
     font-family: var(--titlefont);
     font-size: 1.5rem;
     font-weight: 600;
-    display: inline-block;
+    display: inline-block; /* Block-level appearance while keeping it inline */
     text-align: center;
     text-transform: uppercase;
     line-height: 2rem;
-    white-space: nowrap;
+    white-space: nowrap; /* Prevents text wrapping */
     padding: 1rem 3rem;
     margin-left: 0;
     border: 0.3rem solid rgba(156, 175, 137, 0.8);
@@ -209,35 +257,42 @@ nav {
 }
 
 /* Mobile Navigation -------------------------------------------------------------------------- */
-/* There is JS already configured for this, but I won't be adding it until the JS lab */
+
+/* Off-screen menu container */
 
 .off-screen-menu {
-    background-color: #211e21;
+    background-color: #211e21; /* Matches site background */
     height: 100vh;
     width: 100%;
-    max-height: 100%;
-    position: fixed;
-    top: -100vh;
+    max-height: 100%; /* Prevents overflow */
+    position: fixed; /* Stays in place */
+    top: -100vh; /* Initially hidden above the viewport */
     left: 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stacks items vertically */
     align-items: center;
     justify-content: center;
     text-align: center;
     font-size: 3rem;
     font-family: var(--titlefont);
-    transition: top 0.3s ease;
+    transition: top 0.3s ease; /* Smooth slide-in effect */
 }
 
+/* Active state for the off-screen menu */
+
 .off-screen-menu.active {
-    top: 0;
-    max-width: 100%;
+    top: 0; /* Slides menu into view */
+    max-width: 100%; /* Ensures it stays full width */
 }
+
+/* Menu links */
 
 .off-screen-menu a {
     color: #9caf89;
     font-weight: 600;
 }
+
+/* Hamburger menu button container */
 
 .hb-menu {
     height: 4rem;
@@ -245,69 +300,89 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    position: relative; /* Needed for child spans' positioning */
 }
+
+/* Hamburger menu lines */
 
 .hb-menu span {
     height: 5px;
     width: 100%;
     background-color: #fff;
     border-radius: 25px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    transition: .3s ease;
+    position: absolute; /* Positioned within the container */
+    left: 50%; /* Centers horizontally */
+    top: 50%; /* Centers vertically */
+    transform: translate(-50%, -50%); /* Centers using transform */
+    transition: 0.3s ease; /* Smooth transition for hover/active state */
 }
 
+/* Positioning the first and third lines */
+
 .hb-menu span:nth-child(1) {
-    top: 25%;
+    top: 25%; /* Moves the first line up */
 }
 
 .hb-menu span:nth-child(3) {
-    top: 75%;
+    top: 75%; /* Moves the third line down */
 }
+
+/* Active state for the hamburger menu */
 
 .hb-menu.active span {
-    background-color: white;
+    background-color: white; /* Ensures visibility */
 }
+
+/* Transform first line into part of "X" */
 
 .hb-menu.active span:nth-child(1) {
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
+    top: 50%; /* Centers the line */
+    transform: translate(-50%, -50%) rotate(45deg); /* Rotates to form "X" */
 }
+
+/* Hides the second line */
 
 .hb-menu.active span:nth-child(2) {
-    opacity: 0;
+    opacity: 0; /* Makes it invisible */
 }
 
+/* Transform third line into part of "X" */
+
 .hb-menu.active span:nth-child(3) {
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
+    top: 50%; /* Centers the line */
+    transform: translate(-50%, -50%) rotate(-45deg); /* Rotates to form "X" */
 }
 
 /* Navigation Bar Animations ------------------------------------------------------------------ */
 
+/* Hover effect for navigation links */
+
 .nav-link:hover {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.7); /* Lightens text color on hover */
 }
+
+/* Active link underline animation */
 
 .nav-link.active::before {
-    background-color: #9caf89;
+    background-color: #9caf89; /* Green underline for active link */
     width: 100%;
     height: 0.3rem;
-    display: block;
-    position: absolute;
+    display: block; /* Ensures the underline is visible */
+    position: absolute; /* Positioned relative to the link */
     bottom: 1rem;
     left: 0;
-    content: "";
-    transition: transform 0.3s ease;
-    transform: scaleX(1);
+    content: ""; /* Necessary for pseudo-element styling */
+    transition: transform 0.3s ease; /* Smooth scale effect */
+    transform: scaleX(1); /* Full width for active state */
 }
 
+/* Hover underline effect for inactive links */
+
 .nav-link:hover:not(.active)::before {
-    transform: scaleX(1);
+    transform: scaleX(1); /* Expands underline on hover */
 }
+
+/* Initial state for link underline */
 
 .nav-link::before {
     background-color: #9caf89;
@@ -318,57 +393,73 @@ nav {
     bottom: 1rem;
     left: 0;
     content: "";
-    transition: transform 0.3s ease;
-    transform: scaleX(0);
+    transition: transform 0.3s ease; /* Smooth transition for hover */
+    transform: scaleX(0); /* Hidden underline (scaled to 0) */
 }
 
+/* Hover effect to reveal underline */
+
 .nav-link:hover::before {
-    transform: scaleX(1);
+    transform: scaleX(1); /* Expands underline fully */
 }
+
+/* Call-to-action button hover effect */
 
 .cta-btn:hover {
     background-color: #9caf89;
     color: #211e21;
-    cursor: pointer;
-    transition: all 0.2s ease 0s;
+    cursor: pointer; /* Indicates interactivity */
+    transition: all 0.2s ease 0s; /* Smooth animation for color and background */
 }
 
+/* Default transition for call-to-action button */
+
 .cta-btn:not(:hover) {
-    transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s; /* Ensures smooth transitions when returning to default state */
 }
 
 /* Featured Project --------------------------------------------------------------------------- */
 
+/* Main container for the featured project */
+
 .featured-proj {
-    max-width: 80%;
-    max-height: 100%;
+    max-width: 80%; /* Restricts the width to prevent stretching */
+    max-height: 100%; /* Prevents content from exceeding container height */
     display: flex;
     flex-direction: row;
-    position: relative;
+    position: relative; /* Enables layering of child elements */
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
     margin: 5rem;
 }
 
+/* Styling for images within the featured project */
+
 .featured-proj img {
     margin: 2rem 0;
     border-radius: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth scaling and shadow effects */
 }
 
-.featured-proj-front {
+/* Foreground featured project image */
+
+.featured-proj-fg {
     box-shadow: 0 0px 10px 1px #9caf89;
     max-width: 80%;
-    z-index: 2;
-    transform: scale(1.05);
+    z-index: 2; /* Places this image above other content */
+    transform: scale(1.05); /* Slight enlargement for emphasis */
 }
 
+/* Background image placeholder */
+
 .featured-proj-bg {
-    display: none;
+    display: none; /* Initially hidden, controlled via media queries or scripts */
 }
 
 /* Blurb -------------------------------------------------------------------------------------- */
+
+/* Container for the entire blurb section */
 
 .blurb-content {
     display: flex;
@@ -377,14 +468,18 @@ nav {
     justify-content: center;
 }
 
+/* Styling for the professional portrait image */
+
 .professional-portrait {
-    width: 30rem;
-    height: 30rem;
+    width: 30rem; /* Fixed width for consistency */
+    height: 30rem; /* Fixed height to maintain aspect ratio */
     display: block;
-    object-fit: cover;
-    margin: 5rem 0 0;
+    object-fit: cover; /* Ensures the image covers the container */
+    margin-top: 5rem; /* Adds top spacing */
     border-radius: 250px 250px 0 0;
 }
+
+/* Container for the description */
 
 .blurb-text {
     display: flex;
@@ -394,14 +489,18 @@ nav {
     margin: 5rem 0;
 }
 
+/* Description styling */
+
 .blurb-desc {
     color: #fff;
     width: 80%;
     font-size: 1.5rem;
     text-align: center;
-    line-height: 2.2rem;
+    line-height: 2.2rem; /* Adds comfortable spacing between lines */
     padding: 0 2rem;
 }
+
+/* Links within the description */
 
 .blurb-desc a {
     color: #9caf89;
@@ -412,16 +511,20 @@ nav {
 
 /* About Me ----------------------------------------------------------------------------------- */
 
+/* Wrapper for the About Me section */
+
 .abtme-wrapper {
-    max-width: 100%;
+    max-width: 100%; /* Ensures full-width container */
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: 1rem; /* Adds space between elements */
     margin: auto;
 }
+
+/* Main title styling */
 
 .abtme-ttl {
     color: #9caf89;
@@ -433,81 +536,99 @@ nav {
     margin-top: 3rem;
 }
 
+/* Subtitle styling */
+
 .abtme-subttl {
-    display: none;
+    display: none; /* Initially hidden, controlled via media queries or scripts */
 }
+
+/* Image styling for the About Me section */
 
 #abtme-img {
     width: 30rem;
     height: 30rem;
 }
 
+/* Description styling */
+
 .abtme-desc {
     font-family: var(--bodyfont);
     font-size: 1.3rem;
-    text-transform: none;
+    text-transform: none; /* No transformation on text */
     line-height: 2rem;
     margin: 3rem 5rem 0;
-    max-width: 800px;
+    max-width: 800px; /* Restricts width for better readability */
 }
 
 /* Proficiencies ------------------------------------------------------------------------------ */
 
+/* Container for proficiency section content */
+
 .proficiencies-content {
     margin: 5rem;
-    border-spacing: 1rem 1rem;
-    border-collapse: separate;
+    border-spacing: 1rem 1rem; /* Spacing between table cells */
+    border-collapse: separate; /* Keeps table cells separate */
 }
+
+/* General styling for proficiency images */
 
 .proficiency-img {
     width: 5rem;
 }
 
+/* Skill bar container */
+
 .skill-bar {
     background-color: #ffffff;
     width: 100%;
     height: 24px;
-    overflow: hidden;
+    overflow: hidden; /* Hides anything outside the container */
     border-radius: 100px;
 }
 
+/* Styling for the percentage text inside the skill bar */
+
 .percentage {
-    height: 100%;
+    height: 100%; /* Full height of the skill bar */
     display: flex;
     font-size: 1.5rem;
     padding: 0 3rem;
-    font-weight: bold;
+    font-weight: bold; /* Bold text for emphasis */
     align-items: center;
     justify-content: center;
 }
 
+/* Specific skill bar colors and widths */
+
 .html {
-    background-color: #e44d26;
-    width: 65%;
+    background-color: #e44d26; /* HTML skill bar color */
+    width: 65%; /* Represents 65% proficiency */
 }
 .css {
-    background-color: #264de4;
-    width: 55%;
+    background-color: #264de4; /* CSS skill bar color */
+    width: 55%; /* Represents 55% proficiency */
 }
 .js {
-    background-color: #f3e01f;
-    color: #211e21;
-    width: 20%;
+    background-color: #f3e01f; /* JavaScript skill bar color */
+    color: #211e21; /* Dark text for better contrast */
+    width: 20%; /* Represents 20% proficiency */
 }
 .ps {
-    background-color:#31a8ff;
-    width: 85%;
+    background-color:#31a8ff; /* Photoshop skill bar color */
+    width: 85%; /* Represents 85% proficiency */
 }
 .ai {
-    background-color: #ff9a00;
-    width: 50%;
+    background-color: #ff9a00; /* Illustrator skill bar color */
+    width: 50%; /* Represents 50% proficiency */
 }
 .pr {
-    background-color: #9999ff;
-    width: 45%;
+    background-color: #9999ff; /* Premiere Pro skill bar color */
+    width: 45%; /* Represents 45% proficiency */
 }
 
 /* My Virtues --------------------------------------------------------------------------------- */
+
+/* Wrapper for the virtues section */
 
 .virtues-wrapper {
     display: flex;
@@ -517,14 +638,17 @@ nav {
     max-width: 100%;
 }
 
+/* List styling for virtues */
+
 .virtues-wrapper ol {
-    counter-reset: list-counter;
+    counter-reset: list-counter; /* Resets list counter for numbering */
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0;
-    list-style: none;
 }
+
+/* Virtue item container styling */
 
 .virtues {
     color: #fff;
@@ -536,18 +660,24 @@ nav {
     margin-top: 2rem;
 }
 
+/* Extra margin for first virtue item */
+
 .v01 {
     margin-top: 5rem;
 }
 
+/* Numbering styling for virtues */
+
 .virtues::before {
     color: #9caf89;
-    display: block;
+    display: block; /* Ensures number appears on its own line */
     font-family: var(--titlefont);
     font-size: 3rem;
-    content: counter(list-counter, decimal-leading-zero);
-    counter-increment: list-counter;
+    content: counter(list-counter, decimal-leading-zero); /* Displays the numbered list item */
+    counter-increment: list-counter; /* Increments the list counter */
 }
+
+/* Description text styling for virtues */
 
 .virtues-desc {
     color: #fff;
@@ -559,33 +689,45 @@ nav {
     max-width: 100%;
 }
 
+/* Underline styling for strong text inside description */
+
 .virtues-desc strong {
-    text-decoration: underline;
+    text-decoration: underline; /* Underlines text with the <strong> tag */
 }
 
+/* Ensures proper alignment for virtue list items */
+
 li[class^='v0'], li[class*='v0'] { 
-    text-align: center;
+    text-align: center; /* Centers list items */
 }
 
 /* Numbers List ------------------------------------------------------------------------------- */
+
+/* Container for the numbers list */
 
 .numbers {
     text-align: center;
     font-size: 2rem;
 }
 
+/* Styling for the heading within the numbers list */
+
 .numbers h2 {
     font-family: var(--titlefont);
     margin-bottom: 5rem;
 }
 
+/* Styling for individual list items */
+
 .numbers li {
     font-family: var(--bodyfont);
-    list-style: decimal;
-    list-style-position: inside;
+    list-style: decimal; /* Displays numbered list */
+    list-style-position: inside; /* Positions the numbers inside the list item */
 }
 
-/* General Footer Styles ---------------------------------------------------------------------- */
+/* Footer ------------------------------------------------------------------------------------- */
+
+/* Footer container styling */
 
 #footer {
     height: 100vh;
@@ -594,22 +736,26 @@ li[class^='v0'], li[class*='v0'] {
     flex-direction: column;
     text-transform: uppercase;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* Spreads content evenly */
     padding: 4rem 0;
 }
 
 /* Contact Form ------------------------------------------------------------------------------- */
 
+/* Wrapper for the contact form */
+
 .contact-form-wrapper {
     max-width: 300px;
     width: 100%;
-    background-color: rgba(156, 175, 137, 0.9);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgba(156, 175, 137, 0.9); /* Semi-transparent background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     padding: 3rem 3rem;
     border-radius: 25px;
-    margin-top: auto;
+    margin-top: auto; /* Centers the form vertically */
     margin-bottom: auto;
 }
+
+/* Main heading styling for the contact form */
 
 .contact-form-heading {
     color: #211e21;
@@ -619,6 +765,8 @@ li[class^='v0'], li[class*='v0'] {
     line-height: 2.7rem;
     margin-bottom: 0.5rem;
 }
+
+/* Subheading styling for the contact form */
 
 .contact-form-subheading {
     font-family: var(--bodyfont);
@@ -630,6 +778,8 @@ li[class^='v0'], li[class*='v0'] {
     white-space: nowrap;
 }
 
+/* Label styling for form elements */
+
 .contact-form label {
     color: #211e21;
     font-size: 1.3rem;
@@ -638,9 +788,13 @@ li[class^='v0'], li[class*='v0'] {
     margin-bottom: 0.5rem;
 }
 
+/* Styling for textarea in the contact form */
+
 .contact-form textarea {
-    height: 150px;
+    height: 150px; /* Fixed height for the textarea */
 }
+
+/* General styling for form inputs and textarea */
 
 .contact-form input, .contact-form textarea {
     background-color: #fff;
@@ -652,12 +806,14 @@ li[class^='v0'], li[class*='v0'] {
     margin-bottom: 1.6rem;
     border: 2px solid #788869;
     border-radius: 6px;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
 }
 
+/* Focused input styling */
+
 .contact-form input:focus, .contact-form textarea:focus {
-    border-color: #211e21;
-    outline: none;
+    border-color: #211e21; /* Dark border on focus */
+    outline: none; /* Removes default outline */
 }
 
 .contact-form input[type="submit"] {
@@ -672,14 +828,18 @@ li[class^='v0'], li[class*='v0'] {
     padding: 1.4rem;
     border: none;
     border-radius: 6px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
 
+/* Submit button hover effect */
+
 .contact-form input[type="submit"]:hover {
-    background-color: #141414;
+    background-color: #141414; /* Darkens background on hover */
 }
 
 /* Social Media Icons & Copyright ------------------------------------------------------------- */
+
+/* Wrapper for social icons and copyright section */
 
 .socials-n-copyright-wrapper {
     display: flex;
@@ -688,16 +848,22 @@ li[class^='v0'], li[class*='v0'] {
     justify-content: center;
 }
 
+/* Styling for the social media icons container */
+
 .social-icons {
     display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: 1rem; /* Adds space between icons */
+    margin-bottom: 1rem; /* Adds bottom margin for spacing between the copyright info */
 }
+
+/* Styling for individual social media icon links */
 
 .social-icons a {
     color: #fff;
     font-size: 3rem;
 }
+
+/* Styling for the copyright text */
 
 .copyright {
     color: #fff;
@@ -707,7 +873,11 @@ li[class^='v0'], li[class*='v0'] {
 
 /* Media Queries for Responsive Web Design ---------------------------------------------------- */
 
+/* From this point forward, I made minor changes to the elements depending on the minimum width of the screen for responsiveness */
+/* Styles for devices with a minimum width of 640px */
+
 @media only screen and (min-width: 640px) {
+
     .hero-ttl {
         font-size: 5rem;
         line-height: 3.8rem;
@@ -725,7 +895,7 @@ li[class^='v0'], li[class*='v0'] {
         display: none !important;
     }
 
-    .featured-proj-front {
+    .featured-proj-fg {
         max-width: 70%;
         z-index: 2;
         transform: scale(1.05);
@@ -799,6 +969,8 @@ li[class^='v0'], li[class*='v0'] {
     }
 }
 
+/* Styles for devices with a minimum width of 768px */
+
 @media only screen and (min-width: 768px) {
     .hero-ttl {
         font-size: 6rem;
@@ -817,7 +989,7 @@ li[class^='v0'], li[class*='v0'] {
         display: none !important;
     }
 
-    .featured-proj-front {
+    .featured-proj-fg {
         max-width: 70%;
         z-index: 2;
         transform: scale(1.05);
@@ -880,6 +1052,8 @@ li[class^='v0'], li[class*='v0'] {
     }
 }
 
+/* Styles for devices with a minimum width of 1024px */
+
 @media only screen and (min-width: 1024px) {
     .hero-ttl {
         font-size: 8rem;
@@ -912,7 +1086,7 @@ li[class^='v0'], li[class*='v0'] {
         display: none;
     }
 
-    .featured-proj-front {
+    .featured-proj-fg {
         max-width: 30%;
         z-index: 2;
         transform: scale(1.05);
