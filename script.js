@@ -71,6 +71,9 @@ if (greetingElement) {
 const alertButton = document.getElementById("tmpBtnAlert");
 
 if (alertButton) {
+    // Set initial label on load
+    alertButton.innerText = "Hover Over Me!";
+
     // Show alert message on click
     alertButton.addEventListener("click", () => {
         alert("Hi there! :-)");
