@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evan James Otilla</title>
     <script src="https://kit.fontawesome.com/6085f1fa62.js" crossorigin="anonymous"></script>
+    <script src="./script.js" defer></script>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap">
     <!-- Favicons -->
@@ -18,6 +19,12 @@
 </head>
 
 <body>
+    <!-- Greeting Banner -->
+    <div id="greeting"></div>
+    <!-- Alert Button -->
+    <div class="tmp-btn-wrapper">
+        <button id="tmpBtnAlert">Click Me!</button>
+    </div>
     <div class="hero">
         <!-- Navigation Bar -->
         <header>
@@ -31,15 +38,15 @@
                 </ul>
             </nav>
             <a href="#footer" class="wwm cta-btn">Work With Me →</a>
-            <div class="off-screen-menu">
+            <div class="off-screen-menu" id="offScreenMenu">
                 <ul>
                   <li><a href="./">Home</a></li>
                   <li><a href="about/">About</a></li>
-                  <li><a href="#footer">Work With Me →</a></li>
+                  <li><a href="#footer" id="workWithMeButton">Work With Me →</a></li>
                 </ul>
             </div>
-            <nav>
-                <div class="hb-menu">
+            <nav aria-label="Navigation Menu">
+                <div class="hb-menu" id="hbMenu">
                   <span></span>
                   <span></span>
                   <span></span>
@@ -70,7 +77,7 @@
             <div class="blurb-wrapper">
                 <h2 class="blurb-heading">Hi there!</h2>
                 <div class="blurb-content">
-                    <img class="professional-portrait" src="assets/blurb/professional-portrait.jpg" loading="lazy" alt="Professional portrait of Evan James Otilla wearing a white button-down shirt, black tie, and coat, smiling warmly while looking to the right.">
+                    <img class="professional-portrait" id="blurb-img" src="assets/blurb/professional-portrait.jpg" loading="lazy" alt="Professional portrait of Evan James Otilla wearing a white button-down shirt, black tie, and coat, smiling warmly while looking to the right.">
                     <div class="blurb-text">
                         <p class="blurb-desc">Nice to meet you! My name is Evan James Otilla.
                         <br><br>
@@ -83,18 +90,18 @@
         </section>
     </main>
     
-    <footer id="footer" class="footer-wrapper">
+    <footer id="footer">
         <!-- Contact Form -->
         <div class="contact-form-wrapper">
             <h2 class="contact-form-heading">Have an idea for a project?</h2>
             <h3 class="contact-form-subheading">Let's Chat!</h3>
-            <form class="contact-form">
+            <form class="contact-form" autocomplete="on">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" maxlength="256" spellcheck="false" autocapitalize="none" required>
+                <input type="text" id="name" name="name" maxlength="256" spellcheck="false" autocapitalize="none" autocomplete="name" required>
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" maxlength="256" spellcheck="false" autocapitalize="none" required>
+                <input type="email" id="email" name="email" maxlength="256" spellcheck="false" autocapitalize="none" autocomplete="email" required>
                 <label for="help-box">How can I help?</label>
-                <textarea id="help-box" name="help-box" maxlength="2500" autocapitalize="none" required></textarea>
+                <textarea id="help-box" name="help-box" maxlength="2500" autocapitalize="none" autocomplete="off" required></textarea>
                 <input type="submit" data-wait="Please wait..." class="submit-button" value="Submit">
             </form>
         </div>
@@ -105,7 +112,8 @@
                 <a href="https://www.github.com/ej-otilla" class="fa-brands fa-github fa-2x" aria-label="GitHub Profile" target="_blank"></a>
             </div>
             <!-- Copyright -->
-            <p class="copyright"><small>&copy; 2024 Evan James Otilla. All Rights Reserved.</small></p>
+            <p class="copyright">&copy; Evan James Otilla, <span id="footerYear"></span>
+            <br>All Rights Reserved.</p>
         </div>
     </footer>
 </body>

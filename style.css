@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-/* Reset universal styling, setting up box-sizing, and removing default padding, margin, and other default styling */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -9,15 +8,13 @@
     text-decoration: none;
 }
 
-/* Root variables for global styling */
 :root {
-    font-size: 62.5%; /* Sets 1rem to 10px for easy rem calculations */
+    font-size: 62.5%;
     scroll-behavior: smooth;
-    --titlefont: "Figtree", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Title font stack */
-    --bodyfont: "Quicksand", "Roboto", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Body font stack */
+    --titlefont: "Figtree", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --bodyfont: "Quicksand", "Roboto", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Header styling */
 header {
     font-family: var(--titlefont);
     font-size: 1.5rem;
@@ -29,7 +26,6 @@ header {
     margin-bottom: 3rem;
 }
 
-/* Body styling */
 body {
     background-color: #211e21;
     color: #fff;
@@ -37,32 +33,111 @@ body {
     text-transform: uppercase;
 }
 
-/* Ensures images are non-interactive */
+body.no-scroll {
+    overflow: hidden;
+}
+
 img {
     pointer-events: none;
 }
 
-/* HOMEPAGE ------------------------------------------------------------------------------- */
-
-/* Hero */
-.hero {
-    height: 100vh; /* Full viewport height */
+.featured-proj-wrapper, .blurb-wrapper, .proficiencies-wrapper, .virtues-wrapper {
+    min-height: 100vh;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centers hero content */
+    text-align: center;
+    text-transform: none;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.featured-proj-heading, .blurb-heading, .proficiencies-ttl, .virtues-ttl {
+    background-color: #9caf89;
+    color: #211e21;
+    width: 100%;
+    font-family: var(--titlefont);
+    font-size: 3rem;
+    font-weight: 750;
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding: 1.5rem 0;
+}
+
+/* HOMEPAGE -------------------------------------------------------------------------------------------------------------------------- */
+
+/* Greeting ----------------------------------------------------------------------------------- */
+
+.greeting {
+    font-family: var(--titlefont);
+    font-size: 3rem;
+    text-align: center;
+    padding: 2rem;
+    margin: 1rem 0 0;
+}
+
+.greeting.morning {
+    color: #e09200;
+    background-color: #ffe063;
+    font-weight: 600;
+}
+
+.greeting.afternoon {
+    color: #ffe4ba;
+    background-color: #ffa500;
+    font-weight: 600;
+}
+
+.greeting.evening {
+    color: #809dff;
+    background-color: #1c249e;
+    font-weight: 600;
+}
+
+/* Alert Button ------------------------------------------------------------------------------- */
+
+.tmp-btn-wrapper {
+    text-align: center;
+    margin: 2rem;
+}
+
+#tmpBtnAlert {
+    font-family: var(--bodyfont);
+    font-size: 1.5rem;
+    background-color: #9caf89;
+    color: #211e21;
+    border: none;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#tmpBtnAlert:hover {
+    background-color: #879776;
+    transform: scale(1.1);
+}
+
+
+/* Hero --------------------------------------------------------------------------------------- */
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: relative;
 }
 
-/* Hero title wrapper to center-align content */
 .hero-ttl-wrapper {
-    height: calc(100vh - 80px); /* Viewport height minus header */
+    height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-/* Hero title styling */
 .hero-ttl {
     color: #9caf89;
     font-family: var(--titlefont);
@@ -72,13 +147,30 @@ img {
     justify-content: center;
 }
 
-/* Navigation Bar -------------------------------------------------- */
+/* Navigation Bar Logo ------------------------------------------------------------------------ */
+
+.nav-logo {
+    flex: 0 0 auto;
+}
+
+.nav-logo img {
+    max-width: 100%;
+    width: 30px;
+    height: auto;
+    display: block;
+}
+
+.nav-logo a {
+    width: 0;
+    height: 0;
+}
+
+/* Navigation Bar ----------------------------------------------------------------------------- */
 
 nav {
     position: static;
 }
 
-/* Navbar container for organizing nav items */
 .navbar {
     display: flex;
     flex-grow: 1;
@@ -86,13 +178,11 @@ nav {
     justify-content: center;
 }
 
-/* Gives navbar links transition effects */
 .navbar li a {
     color: #fff;
     transition: all 0.2s ease 0s;
 }
 
-/* Individual nav link styling */
 .nav-link {
     display: none;
 }
@@ -101,7 +191,6 @@ nav {
     display: none !important;
 }
 
-/* Call-to-action button styling */
 .cta-btn {
     background-color: transparent;
     color: #fff;
@@ -115,20 +204,20 @@ nav {
     white-space: nowrap;
     padding: 1rem 3rem;
     margin-left: 0;
-    border: 0.3rem solid rgba(156, 175, 137, 0.8); /* Button border color */
+    border: 0.3rem solid rgba(156, 175, 137, 0.8);
     border-radius: 4rem;
 }
 
-/* Mobile Navigation ----------------------------------------------- */
+/* Mobile Navigation -------------------------------------------------------------------------- */
 /* There is JS already configured for this, but I won't be adding it until the JS lab */
 
 .off-screen-menu {
     background-color: #211e21;
-    height: 100vh; /* Full viewport height */
-    width: 100%; /* Full width */
-    max-height: 100%; /* Make sure it can expand fully */
+    height: 100vh;
+    width: 100%;
+    max-height: 100%;
     position: fixed;
-    top: -100vh;  /* Start above the viewport, out of view */
+    top: -100vh;
     left: 0;
     display: flex;
     flex-direction: column;
@@ -137,7 +226,7 @@ nav {
     text-align: center;
     font-size: 3rem;
     font-family: var(--titlefont);
-    transition: top 0.3s ease;  /* Smooth transition for sliding down */
+    transition: top 0.3s ease;
 }
 
 .off-screen-menu.active {
@@ -197,54 +286,29 @@ nav {
     transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-/* Logo ------------------------------------------------------------ */
+/* Navigation Bar Animations ------------------------------------------------------------------ */
 
-/* Styles the logo container within the navigation */
-.nav-logo {
-    flex: 0 0 auto; /* Prevents the logo from growing or shrinking */
-}
-
-/* Logo image styling */
-.nav-logo img {
-    max-width: 100%; /* Ensures logo doesn’t exceed container width */
-    width: 30px; /* Sets logo size based on viewport width */
-    height: auto; /* Maintains aspect ratio */
-    display: block;
-}
-
-/* Logo link styling */
-.nav-logo a {
-    width: 0;
-    height: 0; /* Hidden anchor for logo */
-}
-
-/* Navigation Bar Animations --------------------------------------- */
-
-/* Hover effect for navigation links */
 .nav-link:hover {
-    color: rgba(255, 255, 255, 0.7); /* Changes color on hover */
+    color: rgba(255, 255, 255, 0.7);
 }
 
-/* Active state underline for navigation links */
 .nav-link.active::before {
-    background-color: #9caf89; /* Underline color */
+    background-color: #9caf89;
     width: 100%;
-    height: 0.3rem; /* Thickness of underline */
+    height: 0.3rem;
     display: block;
     position: absolute;
     bottom: 1rem;
     left: 0;
-    content: ""; /* Creates underline */
+    content: "";
     transition: transform 0.3s ease;
-    transform: scaleX(1); /* Scales underline to full width */
+    transform: scaleX(1);
 }
 
-/* Hover animation for links that are not active */
 .nav-link:hover:not(.active)::before {
-    transform: scaleX(1); /* Expands underline on hover */
+    transform: scaleX(1);
 }
 
-/* Initial state of underline for all nav links */
 .nav-link::before {
     background-color: #9caf89;
     width: 100%;
@@ -255,32 +319,28 @@ nav {
     left: 0;
     content: "";
     transition: transform 0.3s ease;
-    transform: scaleX(0); /* Starts with underline hidden */
+    transform: scaleX(0);
 }
 
-/* Expands underline when hovered */
 .nav-link:hover::before {
-    transform: scaleX(1); /* Expands underline */
+    transform: scaleX(1);
 }
 
-/* Call-to-action button hover styling */
 .cta-btn:hover {
-    background-color: #9caf89; /* Changes background color on hover */
-    color: #211e21; /* Changes text color */
-    cursor: pointer; /* Changes cursor to pointer */
+    background-color: #9caf89;
+    color: #211e21;
+    cursor: pointer;
     transition: all 0.2s ease 0s;
 }
 
-/* Ensures transition effect for CTA button when not hovered */
 .cta-btn:not(:hover) {
     transition: all 0.2s ease 0s;
 }
 
-/* Featured Project ------------------------------------------------ */
+/* Featured Project --------------------------------------------------------------------------- */
 
-/* Container for the featured project section */
 .featured-proj {
-    max-width: 80%; /* Limits section width */
+    max-width: 80%;
     max-height: 100%;
     display: flex;
     flex-direction: row;
@@ -291,64 +351,25 @@ nav {
     margin: 5rem;
 }
 
-/* Styling for images within the featured project */
 .featured-proj img {
     margin: 2rem 0;
     border-radius: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Background styling for featured project */
+.featured-proj-front {
+    box-shadow: 0 0px 10px 1px #9caf89;
+    max-width: 80%;
+    z-index: 2;
+    transform: scale(1.05);
+}
+
 .featured-proj-bg {
     display: none;
 }
 
-/* Foreground styling for featured project */
-.featured-proj-front {
-    box-shadow: 0 0px 10px 1px #9caf89; /* Green shadow effect */
-    max-width: 80%; /* Limits foreground width */
-    z-index: 2; /* Places in front of background images */
-    transform: scale(1.05); /* Slight enlargement */
-}
+/* Blurb -------------------------------------------------------------------------------------- */
 
-/* Blurb --------------------------------------------------- */
-
-/* Container styling for blurb and similar sections */
-.featured-proj-wrapper, .blurb-wrapper, .proficiencies-wrapper, .virtues-wrapper {
-    min-height: 100vh;
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    text-transform: none; /* Resets text transform */
-    justify-content: center;
-    align-items: center;
-    margin: auto; /* Centers section */
-}
-
-/* Heading styling for blurb and similar sections */
-.featured-proj-heading, .blurb-heading, .proficiencies-ttl, .virtues-ttl {
-    background-color: #9caf89;
-    color: #211e21;
-    width: 100%;
-    font-family: var(--titlefont);
-    font-size: 3rem;
-    font-weight: 750;
-    text-transform: uppercase;
-    white-space: nowrap;
-    padding: 1.5rem 0;
-}
-
-/* Styling for portrait image */
-.professional-portrait {
-    width: 35rem;
-    height: 35rem;
-    object-fit: cover; /* Ensures image fills container */
-    margin: 1.5rem 0 0;
-    border-radius: 250px 250px 0 0;
-}
-
-/* Wrapper for blurb content */
 .blurb-content {
     display: flex;
     flex-direction: column;
@@ -356,7 +377,15 @@ nav {
     justify-content: center;
 }
 
-/* Container for blurb text */
+.professional-portrait {
+    width: 30rem;
+    height: 30rem;
+    display: block;
+    object-fit: cover;
+    margin: 5rem 0 0;
+    border-radius: 250px 250px 0 0;
+}
+
 .blurb-text {
     display: flex;
     flex-direction: column;
@@ -365,77 +394,75 @@ nav {
     margin: 5rem 0;
 }
 
-/* Styling for descriptive text in blurb */
 .blurb-desc {
     color: #fff;
-    width: 90%;
-    font-size: 1.7rem;
+    width: 80%;
+    font-size: 1.5rem;
     text-align: center;
     line-height: 2.2rem;
     padding: 0 2rem;
 }
 
-/* Styling for links within blurb descriptions */
 .blurb-desc a {
-    color: #9caf89; /* Highlight color for links */
+    color: #9caf89;
     font-weight: 600;
 }
 
-/* ABOUT PAGE ----------------------------------------------------------------------------- */
+/* ABOUT PAGE ------------------------------------------------------------------------------------------------------------------------ */
 
-/* About Me -------------------------------------------------------- */
+/* About Me ----------------------------------------------------------------------------------- */
 
-/* Styles for the "About Me" section title */
-.abtme-ttl {
-    color: #9caf89;
-    font-family: var(--titlefont);
-    font-size: 5rem;
-    text-align: center;
-    margin-top: 5rem;
-}
-
-/* Styles for the "About Me" subtitle */
-.abtme-subttl {
-    color: #9caf89;
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-/* Wrapper for the "About Me" description */
-.abtme-desc-wrapper {
-    max-width: 100%; /* Limits the width of the content */
+.abtme-wrapper {
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    margin: auto; /* Centers the wrapper */
+    margin: auto;
 }
 
-/* Styling for professional portrait image */
-.professional-portrait {
+.abtme-ttl {
+    color: #9caf89;
+    font-family: var(--titlefont);
+    font-size: 3.2rem;
+    text-align: center;
+    line-height: 2.8rem;
+    padding: 0 5rem;
+    margin-top: 3rem;
+}
+
+.abtme-subttl {
+    display: none;
+}
+
+#abtme-img {
     width: 30rem;
     height: 30rem;
-    object-fit: cover; /* Ensures the image fills its container */
-    margin: 5rem 5rem 0;
-    border-radius: 250px 250px 0 0;
 }
 
-/* Styling for main description text */
 .abtme-desc {
     font-family: var(--bodyfont);
-    font-size: 1.6rem;
-    text-transform: none; /* No uppercase transformation */
+    font-size: 1.3rem;
+    text-transform: none;
     line-height: 2rem;
-    margin-bottom: 1.5rem;
-    max-width: 600px; /* Width limit for readability */
+    margin: 3rem 5rem 0;
+    max-width: 800px;
 }
 
-/* Proficiencies --------------------------------------------------- */
+/* Proficiencies ------------------------------------------------------------------------------ */
 
-/* Styles for the skill bar background */
+.proficiencies-content {
+    margin: 5rem;
+    border-spacing: 1rem 1rem;
+    border-collapse: separate;
+}
+
+.proficiency-img {
+    width: 5rem;
+}
+
 .skill-bar {
     background-color: #ffffff;
     width: 100%;
@@ -444,103 +471,122 @@ nav {
     border-radius: 100px;
 }
 
-/* Percentage indicator within skill bar */
 .percentage {
     height: 100%;
     display: flex;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    padding: 0 3rem;
     font-weight: bold;
     align-items: center;
     justify-content: center;
 }
 
-/* Container for the proficiencies content */
-.proficiencies-content {
-    margin: 5rem;
-    border-spacing: 1rem 1rem;
-    border-collapse: separate;
-}
-
-/* Individual skill bar colors and widths */
 .html {
-    background-color: #e44d26; /* HTML colour */
+    background-color: #e44d26;
     width: 65%;
 }
 .css {
-    background-color: #264de4; /* CSS colour */
+    background-color: #264de4;
     width: 55%;
 }
+.js {
+    background-color: #f3e01f;
+    color: #211e21;
+    width: 20%;
+}
 .ps {
-    background-color: #31a8ff; /* Photoshop colour */
+    background-color:#31a8ff;
     width: 85%;
 }
 .ai {
-    background-color: #ff9a00; /* Illustrator colour */
+    background-color: #ff9a00;
     width: 50%;
 }
 .pr {
-    background-color: #9999ff; /* Premiere Pro colour */
+    background-color: #9999ff;
     width: 45%;
 }
 
-/* Virtues --------------------------------------------------------- */
+/* My Virtues --------------------------------------------------------------------------------- */
 
-/* Styles for ordered list in the virtues section */
-.virtues-wrapper ol {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two-column layout */
-    counter-reset: list-counter; /* Resets list counter */
-    align-items: flex-start;
-    gap: 40px;
-    margin: 5rem;
+.virtues-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
 }
 
-/* Styles for individual virtue items */
+.virtues-wrapper ol {
+    counter-reset: list-counter;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    list-style: none;
+}
+
 .virtues {
     color: #fff;
     display: flex;
     flex-direction: column;
     font-family: var(--titlefont);
     font-size: 2rem;
-    align-items: flex-start; /* Aligns text to the left */
-    margin: 0 0 1rem; /* Spacing below each virtue */
+    align-items: center;
+    margin-top: 2rem;
 }
 
-/* Styles for virtue descriptions */
-.virtues-desc {
-    color: #fff;
-    font-family: var(--bodyfont);
-    font-size: 1.6rem;
-    text-transform: none;
-    line-height: 2rem; /* Line spacing for readability */
-    margin-top: 10px;
+.v01 {
+    margin-top: 5rem;
 }
 
-/* Numbering for virtues */
 .virtues::before {
     color: #9caf89;
     display: block;
     font-family: var(--titlefont);
     font-size: 3rem;
-    content: counter(list-counter, decimal-leading-zero); /* Auto-increments number */
+    content: counter(list-counter, decimal-leading-zero);
     counter-increment: list-counter;
-    margin-bottom: 10px;
 }
 
-/* Underline styling for emphasized text within virtues */
+.virtues-desc {
+    color: #fff;
+    font-family: var(--bodyfont);
+    font-size: 1.3rem;
+    text-transform: none;
+    line-height: 2rem;
+    margin: 2rem 5rem;
+    max-width: 100%;
+}
+
 .virtues-desc strong {
-    text-decoration: underline; /* Underline emphasis */
+    text-decoration: underline;
 }
 
-/* Container for virtue descriptions */
 li[class^='v0'], li[class*='v0'] { 
-    max-width: 60rem; /* Width limit for readability */
-    text-align: left;
+    text-align: center;
 }
 
-/* General Footer Styles ------------------------------------------- */
+/* Numbers List ------------------------------------------------------------------------------- */
 
-/* Footer container */
+.numbers {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.numbers h2 {
+    font-family: var(--titlefont);
+    margin-bottom: 5rem;
+}
+
+.numbers li {
+    font-family: var(--bodyfont);
+    list-style: decimal;
+    list-style-position: inside;
+}
+
+/* General Footer Styles ---------------------------------------------------------------------- */
+
 #footer {
     height: 100vh;
     font-family: var(--titlefont);
@@ -552,17 +598,8 @@ li[class^='v0'], li[class*='v0'] {
     padding: 4rem 0;
 }
 
-/* Contact Form ---------------------------------------------------- */
+/* Contact Form ------------------------------------------------------------------------------- */
 
-/* Styling for form labels and text areas */
-label, textarea { 
-    max-height: 250px; 
-    min-height: 100px;
-    width: 100%;
-    resize: none; /* Disables resizing the textbox*/
-}
-
-/* Wrapper for the contact form */
 .contact-form-wrapper {
     max-width: 300px;
     width: 100%;
@@ -574,7 +611,6 @@ label, textarea {
     margin-bottom: auto;
 }
 
-/* Main heading for contact form */
 .contact-form-heading {
     color: #211e21;
     font-size: 2.9rem;
@@ -584,7 +620,6 @@ label, textarea {
     margin-bottom: 0.5rem;
 }
 
-/* Subheading for contact form */
 .contact-form-subheading {
     font-family: var(--bodyfont);
     font-size: 1.9rem;
@@ -595,7 +630,6 @@ label, textarea {
     white-space: nowrap;
 }
 
-/* Label styling within the contact form */
 .contact-form label {
     color: #211e21;
     font-size: 1.3rem;
@@ -604,7 +638,10 @@ label, textarea {
     margin-bottom: 0.5rem;
 }
 
-/* Input and text area styles */
+.contact-form textarea {
+    height: 150px;
+}
+
 .contact-form input, .contact-form textarea {
     background-color: #fff;
     color: #333;
@@ -615,16 +652,14 @@ label, textarea {
     margin-bottom: 1.6rem;
     border: 2px solid #788869;
     border-radius: 6px;
-    transition: border-color 0.3s ease; /* Smooth transition on focus */
+    transition: border-color 0.3s ease;
 }
 
-/* Focus state for inputs and text areas */
 .contact-form input:focus, .contact-form textarea:focus {
-    border-color: #211e21; /* Darker border on focus */
+    border-color: #211e21;
     outline: none;
 }
 
-/* Submit button styling */
 .contact-form input[type="submit"] {
     background-color: #211e21;
     color: #fff;
@@ -640,17 +675,11 @@ label, textarea {
     transition: background-color 0.3s ease;
 }
 
-/* Hover effect for submit button */
 .contact-form input[type="submit"]:hover {
-    background-color: #141414; /* Darkens on hover */
+    background-color: #141414;
 }
 
-/* Height of the textarea */
-.contact-form textarea {
-    height: 150px;
-}
-
-/* Social Media Icons and Copyright -------------------------------- */
+/* Social Media Icons & Copyright ------------------------------------------------------------- */
 
 .socials-n-copyright-wrapper {
     display: flex;
@@ -670,14 +699,13 @@ label, textarea {
     font-size: 3rem;
 }
 
-/* Copyright text styling */
 .copyright {
     color: #fff;
     font-size: 1.2rem;
     text-align: center;
 }
 
-/* Media Queries --------------------------------------------------- */
+/* Media Queries for Responsive Web Design ---------------------------------------------------- */
 
 @media only screen and (min-width: 640px) {
     .hero-ttl {
@@ -711,6 +739,29 @@ label, textarea {
         font-size: 4rem;
     }
 
+    #blurb-img {
+        width: 40rem;
+        height: 40rem;
+    }
+
+    .blurb-desc {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        max-width: 50rem;
+        white-space: wrap;
+        padding: 0;
+    }
+
+    .abtme-ttl {
+        font-size: 4.5rem;
+        line-height: 4rem;
+    }
+
+    #abtme-img {
+        width: 40rem;
+        height: 40rem;
+    }
+
     .abtme-desc-wrapper {
         max-width: 100%;
         display: flex;
@@ -721,18 +772,17 @@ label, textarea {
         margin: auto;
     }
 
-    .professional-portrait {
-        width: 40rem;
-        height: 40rem;
-        display: block;
+    .abtme-desc {
+        font-size: 1.5rem;
+        padding: 0;
     }
 
-    .blurb-desc {
+    .percentage {
         font-size: 2rem;
-        line-height: 2.5rem;
-        max-width: 50rem;
-        white-space: wrap;
-        padding: 0;
+    }
+
+    .virtues-desc {
+        font-size: 1.5rem;
     }
 
     .contact-form-wrapper {
@@ -782,6 +832,12 @@ label, textarea {
         padding: 1.5rem 0;
     }
 
+    .abtme-subttl {
+        font-family: var(--bodyfont);
+        display: flex;
+        font-size: 2rem;
+    }
+
     .abtme-desc-wrapper {
         max-width: 100%;
         display: flex;
@@ -792,13 +848,13 @@ label, textarea {
         margin: auto;
     }
 
-    .professional-portrait {
+    .abtme-desc {
+        font-size: 1.7rem;
+    }
+
+    #blurb-img {
         width: 50rem;
         height: 50rem;
-        object-fit: cover;
-        margin: 5rem;
-        border-radius: 250px 250px 0 0;
-        display: block;
     }
 
     .blurb-desc {
@@ -882,8 +938,8 @@ label, textarea {
         align-items: center;
         justify-content: center;
         width: 80%;
-        margin: 0 auto;
-        gap: 2rem;
+        margin: 5rem auto;
+        gap: 10rem;
     }
 
     .abtme-desc-wrapper {
@@ -896,13 +952,9 @@ label, textarea {
         margin: auto;
     }
 
-    .professional-portrait {
+    #blurb-img {
         width: 50rem;
         height: 50rem;
-        object-fit: cover;
-        margin: 5rem;
-        border-radius: 250px 250px 0 0;
-        display: block;
     }
 
     .blurb-desc {
@@ -920,6 +972,53 @@ label, textarea {
         text-align: left;
         margin-top: 1rem;
         align-self: flex-start;
+    }
+
+    .virtues-wrapper ol {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        counter-reset: list-counter;
+        align-items: flex-start;
+        gap: 10rem;
+        margin: 5rem;
+    }
+    
+    .virtues {
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        font-family: var(--titlefont);
+        font-size: 2rem;
+        align-items: flex-start;
+        margin: 0 0 1rem;
+    }
+    
+    .virtues::before {
+        color: #9caf89;
+        display: block;
+        font-family: var(--titlefont);
+        font-size: 3rem;
+        content: counter(list-counter, decimal-leading-zero);
+        counter-increment: list-counter;
+        margin-bottom: 10px;
+    }
+    
+    .virtues-desc {
+        color: #fff;
+        font-family: var(--bodyfont);
+        font-size: 1.6rem;
+        text-transform: none;
+        line-height: 2rem;
+        margin: 1rem 0 0;
+    }
+    
+    .virtues-desc strong {
+        text-decoration: underline;
+    }
+    
+    li[class^='v0'], li[class*='v0'] { 
+        max-width: 60rem;
+        text-align: left;
     }
 
     .contact-form-wrapper {

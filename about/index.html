@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evan James Otilla | About</title>
     <script src="https://kit.fontawesome.com/6085f1fa62.js" crossorigin="anonymous"></script>
+    <script src="../script.js" defer></script>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap">
     <!-- Favicons -->
@@ -30,15 +31,15 @@
             </ul>
         </nav>
         <a href="#footer" class="wwm cta-btn">Work With Me →</a>
-        <div class="off-screen-menu">
+        <div class="off-screen-menu" id="offScreenMenu">
             <ul>
               <li><a href="../">Home</a></li>
               <li><a href="./">About</a></li>
-              <li><a href="#footer">Work With Me →</a></li>
+              <li><a href="#footer" id="workWithMeButton">Work With Me →</a></li>
             </ul>
         </div>
-        <nav>
-            <div class="hb-menu">
+        <nav aria-label="Navigation Menu">
+            <div class="hb-menu" id="hbMenu">
               <span></span>
               <span></span>
               <span></span>
@@ -48,13 +49,15 @@
     <main>
         <!-- About Me -->
         <section>
-            <div class="abtme-desc-wrapper">
+            <div class="abtme-wrapper">
                 <h1 class="abtme-ttl">Hi, I'm Evan James Otilla.</h1>
                 <h2 class="abtme-subttl">You can call me Evan or EJ for short!</h2>
                 <img class="professional-portrait" id="abtme-img" src="../assets/blurb/professional-portrait.jpg" alt="Professional portrait of Evan James Otilla wearing a white button-down shirt, black tie, and coat, smiling warmly while looking to the right.">
-                <p class="abtme-desc">Originally from the Philippines, I've always been fascinated with technology and exploring the depths of my creativity.</p>
-                <p class="abtme-desc">Currently, I'm learning web design and development at the Southern Institute of Technology (SAIT), focusing on HTML and CSS. I'm particularly interested in user experience, visual design, and ensuring that everything I create is accessible to everyone, regardless of ability.</p>
-                <p class="abtme-desc">When I'm not working, I enjoy exercising, reading books, learning music production, and watching commentary and gaming videos on YouTube.</p>
+                <div class="abtme-desc-wrapper">
+                    <p class="abtme-desc">Originally from the Philippines, I've always been fascinated with technology and exploring the depths of my creativity.</p>
+                    <p class="abtme-desc">Currently, I'm learning web design and development at the Southern Alberta Institute of Technology (SAIT), focusing on HTML, CSS, and JavaScript. I'm particularly interested in user experience, visual design, and ensuring that everything I create is accessible to everyone, regardless of ability.</p>
+                    <p class="abtme-desc">When I'm not working, I enjoy going out with friends, watching commentary and gaming videos on YouTube, and exploring all things music.</p>
+                </div>
             </div>
         </section>
         <!-- Proficiencies -->
@@ -63,32 +66,38 @@
                 <h2 class="proficiencies-ttl">Proficiencies</h2>
                 <table class="proficiencies-content">
                     <tbody>
-                        <tr class="html-wrapper">
-                            <th scope="row"><img src="../assets/front-end-stack/html5-logo.svg" loading="lazy" alt="Orange HTML5 logo" aria-label="Orange HTML5 logo"></th>
+                        <tr>
+                            <th scope="row"><img src="../assets/front-end-stack/html5-logo.svg" class="proficiency-img" loading="lazy" alt="Orange HTML5 logo" aria-label="Orange HTML5 logo"></th>
                             <td class="skill-bar">
                             <div class="html percentage">65%</div>
                             </td>
                         </tr>
-                        <tr class="css-wrapper">
-                            <th scope="row"><img src="../assets/front-end-stack/css3-logo.svg" loading="lazy" alt="Blue CSS3 logo" aria-label="Blue CSS3 logo" width="75"></th>
+                        <tr>
+                            <th scope="row"><img src="../assets/front-end-stack/css3-logo.svg" class="proficiency-img" loading="lazy" alt="Blue CSS3 logo" aria-label="Blue CSS3 logo"></th>
                             <td class="skill-bar">
                                 <div class="css percentage">55%</div>
                             </td>
                         </tr>
-                        <tr class="ps-wrapper">
-                            <th scope="row"><img src="../assets/adobe-cc/ps-logo.svg" loading="lazy" alt="Blue Adobe Photoshop logo" aria-label="Blue Adobe Photoshop logo" width="75"></th>
+                        <tr>
+                            <th scope="row"><img src="../assets/front-end-stack/js-logo.svg" class="proficiency-img" loading="lazy" alt="Yellow JavaScript logo" aria-label="Yellow JavaScript logo"></th>
+                            <td class="skill-bar">
+                                <div class="js percentage">20%</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><img src="../assets/adobe-cc/ps-logo.svg" class="proficiency-img" loading="lazy" alt="Blue Adobe Photoshop logo" aria-label="Blue Adobe Photoshop logo"></th>
                             <td class="skill-bar">
                             <div class="ps percentage">85%</div>
                             </td>
                         </tr>
-                        <tr class="ai-wrapper">
-                            <th scope="row"><img src="../assets/adobe-cc/ai-logo.svg" loading="lazy" alt="Orange Adobe Illustrator logo" aria-label="Orange Adobe Illustrator logo" width="75"></th>
+                        <tr>
+                            <th scope="row"><img src="../assets/adobe-cc/ai-logo.svg" class="proficiency-img" loading="lazy" alt="Orange Adobe Illustrator logo" aria-label="Orange Adobe Illustrator logo"></th>
                             <td class="skill-bar">
                                 <div class="ai percentage">50%</div>
                             </td>
                         </tr>
-                        <tr class="pr-wrapper">
-                            <th scope="row"><img src="../assets/adobe-cc/pr-logo.svg" loading="lazy" alt="Purple Adobe Premiere Pro logo" aria-label="Purple Adobe Premiere Pro logo" width="75"></th>
+                        <tr>
+                            <th scope="row"><img src="../assets/adobe-cc/pr-logo.svg" class="proficiency-img" loading="lazy" alt="Purple Adobe Premiere Pro logo" aria-label="Purple Adobe Premiere Pro logo"></th>
                             <td class="skill-bar">
                                 <div class="pr percentage">45%</div>
                             </td>
@@ -121,20 +130,24 @@
                 </ol>
             </div>
         </section>
+        <section class="numbers">
+            <h2>(Temporary) Numbers List</h2>
+            <ol id="numbers"></ol>
+        </section>
     </main>
 
-    <footer id="footer" class="footer-wrapper">
+    <footer id="footer">
         <!-- Contact Form -->
         <div class="contact-form-wrapper">
             <h2 class="contact-form-heading">Have an idea for a project?</h2>
             <h3 class="contact-form-subheading">Let's Chat!</h3>
-            <form class="contact-form">
+            <form class="contact-form" autocomplete="on">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" maxlength="256" spellcheck="false" autocapitalize="none" required>
+                <input type="text" id="name" name="name" maxlength="256" spellcheck="false" autocapitalize="none" autocomplete="name" required>
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" maxlength="256" spellcheck="false" autocapitalize="none" required>
+                <input type="email" id="email" name="email" maxlength="256" spellcheck="false" autocapitalize="none" autocomplete="email" required>
                 <label for="help-box">How can I help?</label>
-                <textarea id="help-box" name="help-box" maxlength="2500" autocapitalize="none" required></textarea>
+                <textarea id="help-box" name="help-box" maxlength="2500" autocapitalize="none" autocomplete="off" required></textarea>
                 <input type="submit" data-wait="Please wait..." class="submit-button" value="Submit">
             </form>
         </div>
@@ -145,7 +158,8 @@
                 <a href="https://www.github.com/ej-otilla" class="fa-brands fa-github fa-2x" aria-label="GitHub Profile" target="_blank"></a>
             </div>
             <!-- Copyright -->
-            <p class="copyright"><small>&copy; 2024 Evan James Otilla. All Rights Reserved.</small></p>
+            <p class="copyright">&copy; Evan James Otilla, <span id="footerYear"></span>
+            <br>All Rights Reserved.</p>
         </div>
     </footer>
 </body>
