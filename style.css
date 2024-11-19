@@ -846,6 +846,7 @@ li[class^='v0'], li[class*='v0'] {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 3rem;
 }
 
 /* Styling for the social media icons container */
