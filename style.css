@@ -81,69 +81,6 @@ img {
 
 /* HOMEPAGE -------------------------------------------------------------------------------------------------------------------------- */
 
-/* Greeting ----------------------------------------------------------------------------------- */
-
-/* Base styles for the greeting text */
-
-.greeting {
-    font-family: var(--titlefont);
-    font-size: 3rem;
-    text-align: center;
-    padding: 2rem;
-    margin: 1rem 0 0;
-}
-
-/* Dynamic styles based on time of day */
-
-.greeting.morning {
-    color: #e09200;
-    background-color: #ffe063;
-    font-weight: 600;
-}
-
-.greeting.afternoon {
-    color: #ffe4ba;
-    background-color: #ffa500;
-    font-weight: 600;
-}
-
-.greeting.evening {
-    color: #809dff;
-    background-color: #1c249e;
-    font-weight: 600;
-}
-
-/* Alert Button ------------------------------------------------------------------------------- */
-
-/* Wrapper for centering the alert button */
-
-.tmp-btn-wrapper {
-    text-align: center;
-    margin: 2rem;
-}
-
-/* Alert button base styling */
-
-#tmpBtnAlert {
-    font-family: var(--bodyfont);
-    font-size: 1.5rem;
-    background-color: #9caf89;
-    color: #211e21;
-    border: none;
-    border-radius: 10px; /* Rounded corners */
-    padding: 1rem 2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
-}
-
-/* Alert button hover effects */
-
-#tmpBtnAlert:hover {
-    background-color: #879776; /* Slightly darker green on hover */
-    transform: scale(1.1); /* Enlarges the button for emphasis */
-}
-
-
 /* Hero --------------------------------------------------------------------------------------- */
 
 /* Full-screen hero container with centered content */
@@ -699,30 +636,6 @@ nav {
 
 li[class^='v0'], li[class*='v0'] { 
     text-align: center; /* Centers list items */
-}
-
-/* Numbers List ------------------------------------------------------------------------------- */
-
-/* Container for the numbers list */
-
-.numbers {
-    text-align: center;
-    font-size: 2rem;
-}
-
-/* Styling for the heading within the numbers list */
-
-.numbers h2 {
-    font-family: var(--titlefont);
-    margin-bottom: 5rem;
-}
-
-/* Styling for individual list items */
-
-.numbers li {
-    font-family: var(--bodyfont);
-    list-style: decimal; /* Displays numbered list */
-    list-style-position: inside; /* Positions the numbers inside the list item */
 }
 
 /* Footer ------------------------------------------------------------------------------------- */
