@@ -22,7 +22,30 @@
 </head>
 
 <body>
+    <header>
+        <a href="./" aria-label="Homepage">
+            <img src="assets/logo.png" alt="Stylized logo forming the letters 'E' and 'J'.">
+        </a>
+    
+        <!-- Hamburger Menu Button --> 
+        <button id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    
+        <!-- Main Navigation -->
+        <nav aria-label="Navigation menu">
+            <ul id="navMenu">
+                <li><a href="./" class="active" aria-current="page">Home</a></li>
+                <li><a href="about/" aria-current="page">About</a></li>
+                <li><a href="projects/" aria-current="page">Projects</a></li>
+            </ul>
+        </nav>
 
+        <!-- CTA Button for Desktop Devices -->
+        <a href="#footer" class="cta-btn" role="button" aria-label="Scroll to footer">Work With Me →</a>
+    </header>
 </body>
 
 </html>
