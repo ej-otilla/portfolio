@@ -50,3 +50,59 @@ body header a img {
     height: auto;
     flex: 0 0 auto;
 }
+
+/* HAMBURGER MENU STYLES */
+
+#hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    width: 2rem;
+    height: 2.5rem;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    margin-left: auto;
+    position: relative;
+}
+
+#hamburger span {
+    height: 3px;
+    width: 100%;
+    background-color: #9caf89;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s ease;
+}
+
+#hamburger span:nth-child(1) {
+    top: 25%;
+}
+
+#hamburger span:nth-child(3) {
+    top: 75%;
+}
+
+/* HAMBURGER ICON ANIMATION STYLES */
+
+#hamburger.active span {
+    background-color: #211e21;
+    transition: 0.3s ease;
+}
+
+#hamburger.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+#hamburger.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
