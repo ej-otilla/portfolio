@@ -75,8 +75,9 @@ body header a img {
     width: 100%;
     background-color: #9caf89;
     position: absolute;
+    left: 0;
+    right: 0;
     top: 50%;
-    transform: translate(-50%, -50%);
     transition: 0.3s ease;
 }
 
@@ -97,7 +98,7 @@ body header a img {
 
 #hamburger.active span:nth-child(1) {
     top: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
+    transform: rotate(45deg);
 }
 
 #hamburger.active span:nth-child(2) {
@@ -106,7 +107,7 @@ body header a img {
 
 #hamburger.active span:nth-child(3) {
     top: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
+    transform: rotate(-45deg);
 }
 
 /* NAVIGATION STYLES */
