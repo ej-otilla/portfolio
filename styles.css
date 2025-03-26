@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+:root {
+    --titleFont: "Figtree", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --bodyFont: "Quicksand", "Roboto", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #211e21;
+    color: #fff;
+    font-family: var(--bodyFont);
+    text-transform: uppercase;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    pointer-events: none;
+}
